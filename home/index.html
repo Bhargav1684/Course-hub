@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="website icon" type="png" href="icon.png">
+</head>
+
+<body>
+    <!-- navbar --->
+    <header>
+        <nav class="navbar">
+            <div class="left-section">
+                <div class="logo">
+                    <h2 href="index.html">Course Hub</h2>
+                </div>
+
+                <!-- Explore Dropdown -->
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        <strong>Explore</strong>
+                        <i class="fas fa-arrow-down icon"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Explore roles</a>
+                        <a href="#">Explore Catogaries</a>
+                        <a href="#">Explore trading skill</a>
+                        <a href="#">Earn a professional certificate</a>
+                        <a href="#">Earn a online degree</a>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="What do you want to learn?" />
+                    <button class="search-btn">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/search.png" alt="Search Icon" />
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Right side: Online Degree, Career, Login, Join for Free -->
+            <div class="right-section">
+                <div class="degree-career">
+                    <a href="#">Online Degree</a>
+                    <a href="../test.html">Career</a>
+                </div>
+
+                <div class="login">
+                    <a href="../login.html">Login</a>
+                </div>
+
+                <div class="join-btn">
+                    <a href="../singup.html">
+                        <button><strong>Join for Free</strong></button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- notification --->
+    <div class="notification">
+        <span>Prepare for certification exams in IT, cybersecurity, and more with <a href="#">affordable prep
+                courses.</a></span>
+        <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <!---- text container in hero section header -->
+            <div class="text-container">
+                <div class="animated-text">
+                    <span class="text-line">Welcome to Course hub!</span>
+                    <span class="text-line">We Provide Best Courses!</span>
+                    <span class="text-line">Contact us for more details.</span>
+                </div>
+            </div>
+
+            <strong>Choose your path. Grow your career.</strong>
+
+            <p>Expert-led programs. Job-ready certificates. 10,000+ ways to grow. All for ₹8,499 per year, regularly
+                ₹33,000.</p>
+            <a href="courses.html" class="cta-button">Start Learning</a>
+
+            <!-- Social Media Icons -->
+            <div class="contact">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon insta">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me" target="_blank" class="social-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <strong>Follow US For More Detail</strong>
+            </div>
+        </div>
+
+
+    </section>
+
+     <!-- Chatbot Button -->
+     <div class="chatbot-btn" id="chatbot-btn">
+        💬 Tutor
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <span>Course Hub AI</span>
+            <button class="close-btn" id="close-chat">X</button>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will go here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <!--.collaboration section--->
+    <section class="collaboration">
+        <div class="collaboration-container">
+
+            <!-- Text Section -->
+            <div class="collaboration-text">
+                <strong>We collaborate With <a href="#">150+ leading universities and companies</a></strong>
+            </div>
+
+            <div class="logos">
+                <div class="company-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0sFyycgibKXKf72y7OoY44QqVXuj2VY7hw&s"
+                        alt="Google Logo">
+                </div>
+                <div class="company-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                        alt="Duke University Logo">
+                </div>
+                <div class="company-logo">
+                    <img src="https://blog.logomaster.ai/hs-fs/hubfs/ibm-logo-2.jpg?width=672&height=448&name=ibm-logo-2.jpg"
+                        alt="IBM Logo">
+                </div>
+                <div class="company-logo">
+                    <img src="https://branding.web-resources.upenn.edu/sites/default/files/styles/card_3x2/public/2022-03/UniversityofPennsylvania_FullLogo_RGB-4_0.png?h=ab080a2f&itok=tu_jMFEm"
+                        alt="Stanford University Logo">
+                </div>
+                <div class="company-logo">
+                    <img src="https://ljku.edu.in/web/image/31899/FinalLJU1.png" alt="Parul University Logo">
+                </div>
+                <div class="company-logo">
+                    <img src="https://www.ganpatuniversity.ac.in/images/front-end/logo_2020.png"
+                        alt="Parul University Logo">
+                </div>
+                <div class="company-logo">
+                    <img src="https://logowik.com/content/uploads/images/parul-university9542.jpg"
+                        alt="Parul University Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section 1--->
+    <div class="background-container">
+        <div class="cds-course">
+            <div class="dropdown">
+                <p class="proper" onclick="toggleDropdown()">Beginner <span class="arrow"></span></p>
+                <div class="dropdown-content">
+                    <p>Beginner</p>
+                    <p>Intermediate</p>
+                    <p>Advance</p>
+                </div>
+            </div>
+            <p>Popular</p>
+            <p>Software Engineering & IT</p>
+            <p>Business</p>
+            <p>Sales & Marketing</p>
+            <p>Data Science & Analytics</p>
+            <p>Healthcare</p>
+        </div>
+
+        <script>
+            function toggleDropdown() {
+                var dropdownContent = document.querySelector('.dropdown-content');
+                dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+            }
+        </script>
+
+        <div class="course-container">
+
+            <!-- Course 1 -->
+            <div class="course-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3Zyes35QHw2JAztqggVg03/27ecc1f20128a4f1d7138c1fa41cd3a5/content-creator-hero_1X.png?auto=format%2Ccompress&dpr=2&w=720"
+                    alt="Course Image">
+                <div class="course-card-content">
+                    <h5>Data Analyst</h5>
+                    <p> A Data Analyst collects, cleans, and interprets data, using tools like Excel, SQL, and
+                        Tableau to analyze trends and provide insights for decision.</p>
+                    <p><strong>If you like:</strong> analyzing data to find insights, creating reports and
+                        visualizations, and working with spreadsheets and databases this role.</p>
+                    <div class="course-details">
+                        <p><strong>8 LPA to to 15 LPA/year</strong>Future Salary</p>
+                        <p><strong>20,000+</strong>Jobs Available</p><br>
+                        <strong class="text">Credentials</strong><br>
+                        <a href="#">Meta Data Analyst</a><br>
+                        <a href="#">DeepLearning.AI Data Analytics</a><br>
+                        <a href="#">+4 more</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5rYF1dB5rQdD8Ude60Vcgk/a64d122febc9a54ee56402dd3d012042/Data_Scientist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                    alt="Course Image">
+                <div class="course-card-content">
+                    <h5>Data Scientist</h5>
+                    <p>A Data Scientist analyzes large datasets to uncover insights and solve complex problems. They
+                        apply statistical methods, machine learning.</p>
+                    <p><strong>If you like:</strong>analyzing complex datasets, developing machine learning models,
+                        and solving statistical problems this role is for you.</p>
+                    <div class="course-details">
+                        <p><strong>10 LPA to 25 LPA</strong>Future Salary</p>
+                        <p><strong>15,000+</strong>Jobs Avaible</p><br>
+                        <strong class="text">Credentials</strong><br>
+                        <a href="#">IBM Data Science</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/529TZeL8qf9lRVTMIcKPAC/d3f0fea33c0e16076c64b608db7fd4fe/Social_Media_Strategist_-_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                    alt="Course Image">
+                <div class="course-card-content">
+                    <h5>Cyber Security Analyst</h5>
+                    <p>A Cyber Security Analyst monitors and secures an organization’s IT infrastructure. They
+                        analyze threats, identify vulnerabilities, and implement.</p>
+                    <p><strong>If you like:</strong> protecting networks and data from cyber threats, analyzing
+                        security vulnerabilities, and developing security protocols this role is for you.</p>
+                    <div class="course-details">
+                        <p><strong>10 LPA to 35 LPA</strong> Future Salary</p>
+                        <p><strong>25,000+</strong> Jobs Avaible</p><br>
+                        <strong class="text">Credentials</strong><br>
+                        <a href="#">Google Cybersecurity</a><br>
+                        <a href="#">Microsoft Cybersecurity Analyst</a><br>
+                        <a href="#">+3 more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="header-text">
+                    <strong>Choose Your role</strong>
+                </div>
+                <p>Gain the knowledge and skills you need to advance.</p>
+            </div>
+            <div class="explore-all">
+                <a href="courses.html"><button class="explore-btn">Explore all roles <i
+                            class="fas fa-arrow-right"></i></button></a>
+            </div>
+
+        </div>
+    </div>
+
+    <!--section 2--->
+    <div class="certificate">
+        <h3>Specializations and Professional Certificates</h3>
+        <h2>Most Popular Certificates</h2>
+        <p>Explore our most popular programs, get job-ready for an in-demand career.</p>
+    </div>
+
+    <section class="course-certificates">
+        <div class="certificate-container">
+
+            <!-- Certificate Card 1 -->
+            <div class="certificate-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/5e/107f6ec9544c0a9785cd4b16787917/Amie-Hanbury-Hero-Image-.jpg?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google IT Support</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="certificate-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/53xRQ0CAMlfmPHeIwPSA2S/6c62dcfb76f40dc8c1e9d3ac01257de8/Cybersecurity.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google Cybersecurity</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="certificate-card">
+                <img src="https://www.slashgear.com/img/gallery/google-offers-free-it-support-certification-but-theres-a-catch/intro-1645736065.jpg"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google IT Automation With Python</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="certificate-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/70/42c72695b94362a10bd55dc07d79b2/600x600_CourseraImages_Trin.png?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google Digital Marketing & E-commerce</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="button-container">
+        <button class="button show-more">
+            Show 5 More
+        </button>
+        <button class="button">
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!---section 3--->
+    <section class="course-section2">
+        <div class="course-tool2">
+            <p>New</p>
+            <p>Beginner</p>
+            <p>Popular</p>
+            <p>Tool</p>
+            <p>Advance</p>
+        </div>
+
+        <div class="course-container2">
+            <div class="course-item2">
+                <img src="https://prod-discovery.edx-cdn.org/cdn-cgi/image/width=auto,height=auto,quality=75,format=webp/media/programs/card_images/04935896-2fe3-4d56-9874-001c97695470-e7060cfd3fa2.png"
+                    alt="Course 1">
+                <h2> <i class="fab fa-google google-icon" style="color: #0056d2;"></i> Microsoft Generative AI
+                    Engineering</h2>
+                <p>Professional Certificate</p>
+            </div>
+
+            <div class="course-item2">
+                <img src="https://media.licdn.com/dms/image/v2/D5612AQHD_0F67Lv4Ig/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1733147514485?e=2147483647&v=beta&t=tW6PKOsVxe0P-w0sj63zAxfCiZ1kpKdzwDY-sWEk_t8"
+                    alt="Course 2">
+                <h2><i class="fas fa-shopping-cart amazon-icon" style="color: #2ecc71;"></i>Amazon Agentic AI and AI
+                    Agents for Leaders</h2>
+                <p>Specialization</p>
+            </div>
+
+            <div class="course-item2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrFVyd1M5aXAszOyZSqdljJt_RWtrgwLPFAUMx26SGAG0QXtjI1b03tsaohTTJI6_3zB8&usqp=CAU"
+                    alt="Course 3">
+                <h2><i class="fab fa-microsoft microsoft-icon" style="color: #ff1493;"></i> Microsoft AI & ML
+                    Engineering</h2>
+                <p>Professional Certificate</p>
+            </div>
+        </div>
+
+        <div class="header-container2">
+            <div class="header2">
+                <h1>Get started with GenAI</h1>
+                <p>Identify, develop, and execute impactful GenAI business strategies.</p>
+            </div>
+            <div class="explore-all2">
+                <a href="courses.html"><button class="explore-btn2">View all GenAI <i
+                            class="fas fa-arrow-right"></i></button></a>
+            </div>
+        </div>
+
+    </section>
+
+    <!--section 4--->
+    <div class="free-certificate">
+        <h3>Start learning with free courses</h3>
+        <p>Explore free online courses from the world's top universities and companies.</p>
+    </div>
+
+    <section class="free-course-certificates">
+        <div class="free-certificate-container">
+            <!-- Certificate Card 1 -->
+            <div class="free-certificate-card">
+                <img src="https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2020/07/google-cloud-banner-2019.png"
+                    alt="Course Image" class="course-image">
+                <strong><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                        alt="Google Logo" class="course-logo">Google Cloud</strong>
+                <div class="free-course-info">
+                    <h5>Introduction to Genrative AI</h5>
+                    <p>Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="free-certificate-card">
+                <img src="https://media.istockphoto.com/id/594949892/photo/university-of-pennsylvania.jpg?s=612x612&w=0&k=20&c=BkBG2VF-PsivV0hAz4-voWTuVwbkCC5Kl-NCIm6rb3I="
+                    alt="Course Image" class="course-image">
+                <strong><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                        alt="Google Logo" class="course-logo">Competitive Studies Project</strong>
+                <div class="free-course-info">
+                    <h5>AI in National Security</h5>
+                    <p>Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="free-certificate-card">
+                <img src="https://thumbs.dreamstime.com/b/notebooks-colored-pencils-paper-clips-light-gray-table-inscription-english-learner-banner-266226207.jpg"
+                    alt="Course Image" class="course-image">
+                <strong><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                        alt="Google Logo" class="course-logo">University of pennsylvania</strong>
+                <div class="free-course-info">
+                    <h5>English for Career Devlopment</h5>
+                    <p>Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="free-certificate-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D12AQH5nsH1yrEsaQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1707729476807?e=2147483647&v=beta&t=YSi-iMpaS-DASC0kV4TGgTAdQwlz3ZBmk66eyxopHgM"
+                    alt="Course Image" class="course-image">
+                <strong><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                        alt="Google Logo" class="course-logo">Stanford University</strong>
+                <div class="free-course-info">
+                    <h5>Introduction to Statistics</h5>
+                    <p>Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="button-container">
+        <button class="button show-more">
+            Show 5 More
+        </button>
+        <button class="button">
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!--section 5--->
+    <div class="container-4">
+        <h5>Degree Programs</h5>
+        <h3>Find a top degree that fits your life</h3>
+        <p>Breakthrough pricing on 100% online degrees from top universities.</p>
+    </div>
+
+    <section class="free-course-certificates-4">
+        <div class="free-certificate-container-4">
+            <!-- Certificate Card 1 -->
+            <div class="free-certificate-card-4">
+                <img src="https://ugcounselor-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/03/15183238/IIT-Guwahati.jpg"
+                    alt="Course Image" class="course-image-4">
+                <p>Indian institute of Technology Guwahati</p>
+                <h5>Bachelor of Science in Data Science & AI</h5>
+                <div class="free-course-info-4">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Earn a degree</a>
+                    <p>Degree</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="free-certificate-card-4">
+                <img src="https://images.shiksha.com/mediadata/images/1534224264phpTBHMzY.jpeg" alt="Course Image"
+                    class="course-image-4">
+                <p>University of illinois Urbana-champaign</p>
+                <h5>Master of Business Administration (IMBA)</h5>
+                <div class="free-course-info-4">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Earn a degree</a>
+                    <p>Degree</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="free-certificate-card-4">
+                <img src="https://admin.galaxyeduworld.com/storage/other-pages/5dc901851e0e6_1.jpg" alt="Course Image"
+                    class="course-image-4">
+                <p>S.P. jain Institute of Management </p>
+                <h5>PG Diploma in Management (PGDM) Online</h5>
+                <div class="free-course-info-4">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Earn a degree</a>
+                    <p>Degree</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="free-certificate-card-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Rqqg60vKbBN3WjdkkXvdO6jR116-4ZV91Q&s"
+                    alt="Course Image" class="course-image-4">
+                <p>Birla Institute of Technology & Science</p>
+                <h5>Bachelor of Science in Computer Science</h5>
+                <div class="free-course-info-4">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Earn a degree</a>
+                    <p>Degree</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="button-container">
+        <button class="button show-more">
+            Show 5 More
+        </button>
+        <button class="button">
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+
+    <!--- free trial section --->
+    <div class="container-5">
+        <h5>Course Hub Share Market Courses</h5>
+        <h3>Best Courses for your Futures</h3>
+    </div>
+
+    <section class="free-course-certificates-5">
+        <div class="free-certificate-container-5">
+            <!-- Certificate Card 1 -->
+            <div class="free-certificate-card-5">
+                <img src="https://www.shutterstock.com/image-photo/stock-market-forex-trading-graph-260nw-2372281173.jpg"
+                    alt="Course Image" class="course-image-5">
+                <h5>Option trading</h5>
+                <p>"Master the strategies of option trading and learn how to maximize your returns with this
+                    comprehensive course."</p>
+                <div class="free-course-info-5">
+                    <p>7- day free trial</p>
+                </div>
+            </div>
+
+
+            <!-- Certificate Card 2 -->
+            <div class="free-certificate-card-5">
+                <img src="https://media.licdn.com/dms/image/v2/C5612AQFYfvL7hJ8Jaw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1608264170787?e=2147483647&v=beta&t=-4fGe5HWT35VIR6HAEo1mu-_L1xMpr3KX3lg_asfp8I"
+                    alt="Course Image" class="course-image-5">
+                <h5>Futures contract</h5>
+                <p>"Gain expertise in futures contracts and learn how to hedge risks and speculate on market movements
+                    effectively."</p>
+                <div class="free-course-info-5">
+                    <p>7- day free trial</p>
+                </div>
+            </div>
+
+
+            <!-- Certificate Card 3 -->
+            <div class="free-certificate-card-5">
+                <img src="https://www.shutterstock.com/image-vector/investment-banner-web-icon-business-260nw-1428719546.jpg"
+                    alt="Course Image" class="course-image-5">
+                <h5>Investing</h5>
+                <p>"Learn the fundamentals of investing and develop strategies to grow your wealth over time with this
+                    comprehensive course."</p>
+                <div class="free-course-info-5">
+                    <p>7- day free trial</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="free-certificate-card-5">
+                <img src="https://static.vecteezy.com/system/resources/previews/032/399/958/non_2x/financial-data-and-technology-drive-stock-market-growth-generative-ai-photo.jpg"
+                    alt="Course Image" class="course-image-5">
+                <h5>Financial market</h5>
+                <p>"Understand the dynamics of financial markets and learn how to navigate investments, trading, and
+                    risk management effectively."</p>
+                <div class="free-course-info-5">
+                    <p>7- day free trial</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="button-container">
+        <button class="button show-more">
+            Show 5 More
+        </button>
+        <button class="button">
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+
+    <!--Avaible Course--->
+    <section class="courses-section">
+        <p class="disclaimer">¹Each university determines admission and the number of pre-approved prior learning
+            credits that may count toward the degree requirements according to institutional policies, which may
+            consider any existing credits you may have.</p>
+        <h2 class="section-title">Explore Course Hub</h2>
+        <div class="courses-container">
+            <a href="/web-development" class="course-card1">
+                <i class="course-icon fas fa-laptop-code"></i> <!-- Web Development icon -->
+                <strong class="course-title">Web Development</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/data-science" class="course-card1">
+                <i class="course-icon fas fa-database"></i> <!-- Data Science icon -->
+                <strong class="course-title">Data Science</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/graphic-design" class="course-card1">
+                <i class="course-icon fas fa-paint-brush"></i> <!-- Graphic Design icon -->
+                <strong class="course-title">Graphic Design</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/machine-learning" class="course-card1">
+                <i class="course-icon fas fa-robot"></i> <!-- Machine Learning icon -->
+                <strong class="course-title">Machine Learning</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/digital-marketing" class="course-card1">
+                <i class="course-icon fas fa-bullhorn"></i> <!-- Digital Marketing icon -->
+                <strong class="course-title">Digital Marketing</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/ai-fundamentals" class="course-card1">
+                <i class="course-icon fas fa-brain"></i> <!-- AI Fundamentals icon -->
+                <strong class="course-title">AI Fundamentals</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/personal-development" class="course-card1">
+                <i class="course-icon fas fa-user-alt"></i> <!-- Personal Development icon -->
+                <strong class="course-title">Personal Development</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/math-and-logic" class="course-card1">
+                <i class="course-icon fas fa-calculator"></i> <!-- Math and Logic icon -->
+                <strong class="course-title">Math and Logic</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/health" class="course-card1">
+                <i class="course-icon fas fa-heartbeat"></i> <!-- Health icon -->
+                <strong class="course-title">Health</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+            <a href="/language-learning" class="course-card1">
+                <i class="course-icon fas fa-language"></i> <!-- Language Learning icon -->
+                <strong class="course-title">Language Learning</strong>
+                <p class="course-description">101 Course</p>
+            </a>
+        </div>
+        <div class="button-container1">
+            <button class="show-more1">
+                Show More
+            </button>
+            <button class="button1">
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+    </section>
+
+    <!---courses community--->
+    <div class="community-header">
+        <h2>From the Course Hub community</h2>
+        <p>100+ million people have already joined Course hub</p>
+    </div>
+    <div class="community-container">
+        <!-- Container 1 -->
+        <div class="community-card">
+            <img src="https://media.istockphoto.com/id/2058319417/photo/face-business-and-woman-with-arms-crossed-smile-and-career-with-teamwork-meeting-or-planning.jpg?s=612x612&w=0&k=20&c=IwafinWO1ryhwrdA3fB4wU0AtwjT7CGOliNrQijNh3A="
+                alt="Image 1">
+            <div class="name-state">
+                <h3>Julie R.</h3>
+                <p>United States</p>
+            </div>
+            <div class="underline"></div>
+            <p class="paragraph-content"><i>"Being a mother - especially a Working mother means i'm Constantly trying to
+                    juggle
+                    my shedual, my kid's sheduals, and work. I am very greatful for the flexible and remote learning
+                    programs that
+                    course hub has to offer."</i></p>
+        </div>
+
+        <!-- Container 2 -->
+        <div class="community-card">
+            <img src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+                alt="Image 2">
+            <div class="name-state">
+                <h3>Kevil L.</h3>
+                <p>United States</p>
+            </div>
+            <div class="underline"></div>
+            <p class="paragraph-content"><i>"From talking courses on course hub, I gained a deep understanding of the UX
+                    design
+                    process from start to finish. With the knowledge i gained, I feel prepared for entry-level jobs and
+                    internships.
+                    I've been able to apply the skill and knowledge i gained to multiple project and work
+                    experience."</i></p>
+        </div>
+
+        <!-- Container 3 -->
+        <div class="community-card">
+            <img src="https://media.istockphoto.com/id/1503232125/photo/happy-smile-and-portrait-of-business-man-in-city-for-professional-corporate-and-pride.jpg?s=612x612&w=0&k=20&c=uPu3GKHW507ruenLY8xwsB3OgOSwLSWjE3fBpy20Hac="
+                alt="Image 3">
+            <div class="name-state">
+                <h3>Ketan V.</h3>
+                <p>India</p>
+            </div>
+            <div class="underline"></div>
+            <p class="paragraph-content"><i>"I really enjoyed my courses. The quizzes, Video, and quick labs provided
+                    helpful
+                    hands-on experience. Learning on course hub has given me the confidence and ability to excel in my
+                    career. I
+                    love this feeling.</i></p>
+        </div>
+    </div>
+
+    <!-- brand collarbration --->
+    <section class="rebrand-section">
+        <!-- Rebrand Content -->
+        <div class="rebrand-content">
+            <div class="left-side">
+                <h2>Drive your business forward by empowering your talent</h2>
+                <p>Train teams with industry-leading experts and universities, enhanced by AI tools and recognized
+                    credentials.</p>
+
+
+                <!-- Bottom Links Section aligned to the left -->
+                <div class="bottom-links">
+                    <a href="#" class="links">
+                        <button class="business-btn">Discover Course hub for Business</button>
+                    </a>
+                </div>
+                <a href="#" class="link"><span class="link-icon">Upskill a small Team? 🔗</span>Check out Course hub for
+                    Teams</a>
+            </div>
+
+            <div class="right-side">
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/13nB6DdjBJdV5aWWWB5DbH/115574ebbc6de3dffd98daed665dc736/loreal.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=18"
+                        alt="Brand 1">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2aaUOe2Jitm1Z6OPdylXsL/37974ceb0982ccf2c6fabf3fa6bdb5bc/pandg.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=40"
+                        alt="Brand 2">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2gSh2ySvHF7nLxtb9dlQEt/764bae06b9276de25caa4ed11bf14000/tata.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=37"
+                        alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/6cQLsEIdYwjlG4whpJ0bau/5cb01b12278ee726314800c15f08c5e2/DANONE_LOGO.png?auto=format%2Ccompress&dpr=2&w=60%25&h=36"
+                        alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/46IDJ7jA1jOzKUcuJEdv9x/bccbe406253ab481290052d1580d7eae/Emirates_NBD_logo.png?auto=format%2Ccompress&dpr=2&w=60%25&h=30"
+                        alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2jYSxpX0am6lmzOXiF01eb/b2dad4d9e4844a15e828990aa09b6377/Reliance_logo-2.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=30"
+                        alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/1GFMf2tN2JubXPXodUfEhU/f60a309a58fd4a5e750f0497e24a52ab/logo-capgemini.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=30"
+                        alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/1Td6rChmrhf755FaNcHMkw/7f172851005dc6275667c667ffa2678a/logo-petrobras.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=30"
+                        alt="Brand 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/7ynjohQJbi7h24Qk5uUyPW/399503cb97a2775554f28921721d6fd1/General_Electric_logo.svg?auto=format%2Ccompress&dpr=2&w=60%25&h=30"
+                        alt="Brand 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- content-section  --->
+    <div class="section2">
+        <!-- Left side: Image 2 -->
+        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-rebrand/secondary-consumer-cta/Image-Next-Step.png?auto=format%2Ccompress&dpr=2&w=471&h=330&q=40"
+            alt="Placeholder Image">
+
+        <!-- Right side: Text Content 2 -->
+        <div class="text-content2">
+            <h2>Take the next step toward your personal and professional goals with Course hub.</h2>
+            <p>Join now to receive personalized recommendations from the full Course hub catalog.</p>
+            <button>Join for free</button>
+        </div>
+    </div>
+
+
+    <!---text--->
+    <div class="text-2">
+        <p>¹ Median salary and job opening data are sourced from Lightcast™ Job Postings Report.<br>
+            Content Creator, Machine Learning Engineer and Salesforce Development Representative (1/1/2024 -
+            12/31/2024)<br>
+            All other job roles (4/1/2024 - 4/1/2025)</p>
+    </div>
+
+    <!-- footer --->
+    <footer>
+        <div class="footer-container">
+            <!-- First Section: 4 columns of text -->
+            <div class="footer-section">
+                <h4>Technical Skill</h4>
+                <a href="#">ChatGPT</a>
+                <a href="#">Coding</a>
+                <a href="#">Computer Science</a>
+                <a href="#">Cyber Security</a>
+                <a href=#>DevOps</a>
+                <a href="#"> Python</a>
+                <a href="#"> Ethical Hacking</a>
+                <a href="#"> Web Development</a>
+                <a href="#"> Java Programming</a>
+                <a href="#"> Generative AI</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Analytical Skill</h4>
+                <a href="#"> Artificial Intelligence</a>
+                <a href="#"> Big Data</a>
+                <a href="#"> Business Analysis</a>
+                <a href="#">Data Analytics</a>
+                <a href="#">Data Science</a>
+                <a href="#">Financial Modeling</a>
+                <a href="#">Machine Learning</a>
+                <a href="#">Microsoft Excle</a>
+                <a href="#">Microsoft Excle BI</a>
+                <a href="#">SQL</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Business Skill</h4>
+                <a href="#">Accounting</a>
+                <a href="#">Digital Marketing</a>
+                <a href="#">E-commerce</a>
+                <a href="#">Finance</a>
+                <a href="#">Google</a>
+                <a href="#">IBM</a>
+                <a href="#">Grafic Design</a>
+                <a href="#">Marketing</a>
+                <a href="#">Project Management</a>
+                <a href="#">Social Media Marketing</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Career Resources</h4>
+                <a href="#">Essential IT Certifications</a>
+                <a href="#">High-Income Skills to Learn</a>
+                <a href="#">How to Get a PMP Certification</a>
+                <a href="#">How to Learn Artificial Intelligence</a>
+                <a href="#">Popular Cybersecurity Certifications</a>
+                <a href="#">Popular Data Analytics Certifications/a>
+                    <a href="#">What Does a Data Analyst Do?</a>
+                    <a href="#">Career Education Articles</a>
+                    <a href="#">Career Development Resources</a>
+                    <a href="#">Career Aptitude Test</a>
+            </div>
+        </div>
+        </div>
+
+        <!-- Footer bottom part -->
+        <div class="footer-bottom">
+            <div class="footer-section">
+                <h4>Course Hub</h4>
+                <a href="#">About</a>
+                <a href="#">What We Offer</a>
+                <a href="#">Leadership</a>
+                <a href="#">Careers</a>
+                <a href="#">Catalog</a>
+                <a href="#">Course Hub Plus</a>
+                <a href="#">Professional Certificate</a>
+                <a href="#">MasterTrack® Certificates</a>
+                <a href="#">Degree</a>
+                <a href="#">For Enterprise</a>
+                <a href="#">For Goverment</a>
+                <a href="#">ECTS Credit Recommendations</a>
+                <a href="#">For Campus</a>
+                <a href="#">Become a Partner</a>
+                <a href="#">Social Impact</a>
+                <a href="#">Free Courses</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <a href="#">Lerner</a>
+                <a href="#">Partner</a>
+                <a href="#">Beta Tester</a>
+                <a href="#">Blog</a>
+                <a href="#">The Course Hub Podcast</a>
+                <a href="#">Teaching Center</a>
+                <a href="#">Tech Blog</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Conact US</h4>
+                <a href="#">Email : Support@coursehub.com</a>
+                <a href="#">Phine : (91)1234567890</a>
+                <a href="#">Address : 123 Learning course, Ahmedabad, Gujrat</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>More</h4>
+                <a href="#">Press</a>
+                <a href="#">Investor</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Help</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Contact</a>
+                <a href="#">Article</a>
+                <a href="#">Directory</a>
+                <a href="#">Affiliates</a>
+                <a href="#">Modern Slavery Statement</a>
+                <a href="#">Manage Cookie Preferences</a>
+            </div>
+        </div>
+
+        <!-- Footer bottom section with rights and social icons -->
+        <div class="footer-bottom-alt">
+            <div class="right-reserved">
+                <p>&copy; 2025 Course Hub. All Rights Reserved.</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="#" class="fab fa-facebook-f" title="Facebook"></a>
+                <a href="#" class="fab fa-twitter" title="Twitter"></a>
+                <a href="#" class="fab fa-linkedin-in" title="LinkedIn"></a>
+                <a href="#" class="fab fa-instagram" title="Instagram"></a>
+                <a href="#" class="fab fa-whatsapp" title="WhatsApp"></a>
+                <a href="#" class="fab fa-youtube" title="YouTube"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

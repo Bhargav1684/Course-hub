@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Hub - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            color: #333;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .left-section .logo h2 {
+            text-decoration: none;
+            font-size: 26px;
+            color: #0056d2;
+            font-weight: 600;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            padding: 15px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .left-section .logo a:hover {
+            text-decoration: none;
+        }
+
+        .left-section .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            background-color: #ffffff;
+            color: #0056d2;
+            border: 1.5px solid #0056d2;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #e3eeff;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #0f1114;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-bar {
+            border: 1.5px solid #0056d2;
+            display: flex;
+            align-items: center;
+            border-radius: 50px;
+            padding: 0px 20px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            width: 300px;
+            outline: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .search-bar .search-btn {
+            background-color: #e3eeff;
+            border: none;
+            padding: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .search-bar .search-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .degree-career a {
+            color: #5b6780;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .degree-career a:hover {
+            text-decoration: none;
+            color: #0056d2;
+        }
+
+        .login a {
+            color: #0056d2;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .join-btn button {
+            background-color: #ffffff;
+            color: #0056d2;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            border: 1.5px solid #0056d2;
+            font-size: 16px;
+        }
+
+        .join-btn button:hover {
+            background-color: #e3eeff;
+            text-decoration: none;
+        }
+
+        /* Login form */
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .social-login a {
+            text-decoration: none;
+            width: 48%;
+            padding: 12px;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+            color: white;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .social-login a:hover {
+            opacity: 0.8;
+        }
+
+        .signup-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .organization-login {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .organization-login a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .organization-login a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .left-section {
+                margin-bottom: 15px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .search-bar input {
+                width: 100%;
+            }
+
+            .dropdown {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .degree-career {
+                margin-top: 10px;
+            }
+
+            .join-btn {
+                margin-top: 15px;
+            }
+
+            .degree-career a,
+            .login a {
+                font-size: 12px;
+            }
+
+            .login-container {
+                margin-top: 20px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px 20px;
+            }
+
+            .logo a {
+                font-size: 20px;
+            }
+
+            .search-bar input {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .search-bar .search-btn {
+                padding: 6px;
+            }
+
+            .dropdown-btn {
+                font-size: 14px;
+            }
+
+            .degree-career a {
+                font-size: 12px;
+                margin: 0 10px;
+            }
+
+            .login a {
+                font-size: 12px;
+            }
+
+            .join-btn button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="left-section">
+                <div class="logo">
+                    <a href="home/index.html">
+                        <h2>Course Hub</h2>
+                    </a>
+                </div>
+
+                <!-- Explore Dropdown -->
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        <strong>Explore</strong>
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Explore roles</a>
+                        <a href="#">Explore Categories</a>
+                        <a href="#">Explore trading skill</a>
+                        <a href="#">Earn a professional certificate</a>
+                        <a href="#">Earn an online degree</a>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="What do you want to learn?" />
+                    <button class="search-btn" aria-label="Search">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/search.png" alt="Search Icon" />
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right side: Online Degree, Career, Login, Join for Free -->
+            <div class="right-section">
+                <div class="degree-career">
+                    <a href="#">Online Degree</a>
+                    <a href="#">Career</a>
+                </div>
+
+                <div id="auth-buttons">
+                    <!-- Login or Logout button will appear here based on the login status -->
+                </div>
+
+                <div class="join-btn">
+                    <a href="singup.html"><button><strong>Join for Free</strong></button></a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <button type="submit" class="btn" id="login-btn">Login</button>
+        </form>
+
+        <!-- Social Login -->
+        <div class="social-login">
+            <a href="home/index.html" class="google-btn">Login with Google</a>
+            <a href="home/index.html" class="facebook-btn">Login with Facebook</a>
+        </div>
+
+        <!-- Sign Up Link -->
+        <div class="signup-link">
+            <p>Don't have an account? <a href="singup.html">Sign Up</a></p>
+        </div>
+
+        <!-- Login with Organization -->
+        <div class="organization-login">
+            <p>Or <a href="#">Login with your Organization</a></p>
+        </div>
+    </div>
+
+    <script>
+     // Check if the user is logged in
+window.onload = function () {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (isLoggedIn) {
+        // If logged in, show logout button and hide login form
+        document.getElementById("auth-buttons").innerHTML = `
+            <a href="#" id="logout-btn" class="btn">Logout</a>
+        `;
+        document.getElementById("login-form").style.display = "none"; // Hide login form
+    } else {
+        // If not logged in, show login button
+        document.getElementById("auth-buttons").innerHTML = `
+        `;
+    }
+
+    // Logout functionality
+    const logoutButton = document.getElementById("logout-btn");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+            localStorage.setItem("isLoggedIn", "false"); // Set login status to false
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    }
+};
+
+// Handle login button click
+document.getElementById("login-btn")?.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Simulate a successful login
+    localStorage.setItem("isLoggedIn", "true"); // Mark the user as logged in
+    window.location.href = "home/index.html"; // Redirect to index.html (main page)
+});
+
+    </script>
+</body>
+
+</html>
