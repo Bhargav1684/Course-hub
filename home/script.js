@@ -15,6 +15,7 @@ window.addEventListener("scroll", function () {
 });
 
 
+
 //  text container in hero section header
 document.addEventListener('DOMContentLoaded', function () {
   const textLines = document.querySelectorAll('.text-line');
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 // chat bot
 document.addEventListener("DOMContentLoaded", function () {
   const chatbotBtn = document.getElementById("chatbot-btn");
@@ -55,66 +57,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Display the welcome message first when the page reloads
   window.onload = function () {
-      displayWelcomeMessage();
+    displayWelcomeMessage();
   };
 
   // Open/Close Chat Window
   chatbotBtn.addEventListener("click", function () {
-      chatContainer.style.display = "flex";
-      // If the chat is opened manually, display the welcome message and help message
-      displayWelcomeMessage();
+    chatContainer.style.display = "flex";
+    // If the chat is opened manually, display the welcome message and help message
+    displayWelcomeMessage();
   });
 
   closeChat.addEventListener("click", function () {
-      chatContainer.style.display = "none";
+    chatContainer.style.display = "none";
   });
 
   // Send Message
   sendBtn.addEventListener("click", function () {
-      const userMessage = userInput.value.trim();
-      if (userMessage) {
-          // Add user's message
-          addMessage(userMessage, "user");
+    const userMessage = userInput.value.trim();
+    if (userMessage) {
+      // Add user's message
+      addMessage(userMessage, "user");
 
-          // Clear input field
-          userInput.value = "";
+      // Clear input field
+      userInput.value = "";
 
-          // Simulate bot's response
-          setTimeout(() => {
-              const botMessage = "I'm an AI here to help you!";
-              addMessage(botMessage, "bot");
-          }, 1000);
-      }
+      // Simulate bot's response
+      setTimeout(() => {
+        const botMessage = "I'm an AI here to help you!";
+        addMessage(botMessage, "bot");
+      }, 1000);
+    }
   });
 
   // Function to add a message to the chat
   function addMessage(message, sender) {
-      const messageDiv = document.createElement("div");
-      messageDiv.classList.add("message", sender);
-      messageDiv.textContent = message;
-      chatBox.appendChild(messageDiv);
-      chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the bottom
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", sender);
+    messageDiv.textContent = message;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the bottom
   }
 
   // Function to display the "Welcome to Course Hub!" message
   function displayWelcomeMessage() {
-      if (chatContainer.style.display === "flex" || chatContainer.style.display === "none") {
-          // First, show the "Welcome to Course Hub!" message
-          const welcomeMessage = "Welcome to Course Hub!";
-          addMessage(welcomeMessage, "bot");
+    if (chatContainer.style.display === "flex" || chatContainer.style.display === "none") {
+      // First, show the "Welcome to Course Hub!" message
+      const welcomeMessage = "Welcome to Course Hub!";
+      addMessage(welcomeMessage, "bot");
 
-          // After a short delay (2 seconds), display "How may I help you?"
-          setTimeout(function () {
-              const helpMessage = "How may I help you?";
-              addMessage(helpMessage, "bot");
-          }, 2000);  // Delay of 2 seconds
-      }
+      // After a short delay (2 seconds), display "How may I help you?"
+      setTimeout(function () {
+        const helpMessage = "How may I help you?";
+        addMessage(helpMessage, "bot");
+      }, 2000);  // Delay of 2 seconds
+    }
   }
 
   // Optional: Press Enter to send message
   userInput.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-          sendBtn.click();
-      }
+    if (e.key === "Enter") {
+      sendBtn.click();
+    }
   });
 });

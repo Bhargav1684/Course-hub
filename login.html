@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Hub - Login</title>
+    <title>Course Hub, Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="website icon" type="png" href="../Course hub 1/home/icon.png">
     <style>
         body {
             background-color: #f4f4f4;
@@ -17,26 +18,18 @@
         }
 
         /* Navbar */
-        .navbar {
-            position: sticky;
-            top: 0;
+        nav {
+            background-color: #ffffff;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background-color: #ffffff;
-            color: #333;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'Source Sans Pro', Arial, sans-serif;
         }
 
-        .left-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .left-section .logo h2 {
+        .logo {
             text-decoration: none;
             font-size: 26px;
             color: #0056d2;
@@ -47,15 +40,56 @@
             cursor: pointer;
         }
 
-        .left-section .logo a:hover {
+        .logo:hover { 
             text-decoration: none;
         }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-        .left-section .dropdown {
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: #333;
+            margin: 4px 0;
+            border-radius: 3px;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #5b6780;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: none;
+            color: #0056d2;
+        }
+
+        .dropdown {
             position: relative;
         }
 
-        .dropdown-btn {
+        .dropdown-toggle {
             background-color: #ffffff;
             color: #0056d2;
             border: 1.5px solid #0056d2;
@@ -63,36 +97,38 @@
             cursor: pointer;
             padding: 8px 16px;
             border-radius: 5px;
+            font-weight: bold;
         }
 
-        .dropdown-btn:hover {
+        .dropdown-toggle:hover {
             background-color: #e3eeff;
+            text-decoration: none;
         }
 
-        .dropdown-content {
+        .dropdown-menu {
             display: none;
             position: absolute;
-            background-color: #ffffff;
-            min-width: 200px;
+            min-width: 300px;
             z-index: 1;
             border-radius: 5px;
         }
 
-        .dropdown-content a {
+        .dropdown-menu a {
             color: #0f1114;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            width: 250px;
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5;
+            color: #0056d2;
+            text-decoration: underline;
+        }
+
+        .dropdown:hover .dropdown-menu {
             display: block;
-        }
-
-        .right-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
         .search-bar {
@@ -115,7 +151,7 @@
             font-weight: 600;
         }
 
-        .search-bar .search-btn {
+        .search-bar button {
             background-color: #e3eeff;
             border: none;
             padding: 5px;
@@ -124,34 +160,7 @@
             border-radius: 50%;
         }
 
-        .search-bar .search-btn img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .degree-career a {
-            color: #5b6780;
-            text-decoration: none;
-            margin: 0 15px;
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .degree-career a:hover {
-            text-decoration: none;
-            color: #0056d2;
-        }
-
-        .login a {
-            color: #0056d2;
-            text-decoration: none;
-            font-size: 14px;
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            font-weight: bold;
-        }
-
-        .join-btn button {
+        .join-btn {
             background-color: #ffffff;
             color: #0056d2;
             border: none;
@@ -161,11 +170,48 @@
             font-family: 'Source Sans Pro', Arial, sans-serif;
             border: 1.5px solid #0056d2;
             font-size: 16px;
+            font-weight: bold
         }
 
-        .join-btn button:hover {
+        .join-btn:hover {
             background-color: #e3eeff;
             text-decoration: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-left,
+            .nav-right {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                display: none;
+            }
+
+            nav.active .nav-left,
+            nav.active .nav-right {
+                display: flex;
+                margin-top: 10px;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .search-bar input {
+                width: 100%;
+            }
         }
 
         /* Login form */
@@ -293,142 +339,57 @@
         .organization-login a:hover {
             text-decoration: underline;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .left-section {
-                margin-bottom: 15px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .search-bar input {
-                width: 100%;
-            }
-
-            .dropdown {
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .degree-career {
-                margin-top: 10px;
-            }
-
-            .join-btn {
-                margin-top: 15px;
-            }
-
-            .degree-career a,
-            .login a {
-                font-size: 12px;
-            }
-
-            .login-container {
-                margin-top: 20px;
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 10px 20px;
-            }
-
-            .logo a {
-                font-size: 20px;
-            }
-
-            .search-bar input {
-                font-size: 12px;
-                padding: 8px;
-            }
-
-            .search-bar .search-btn {
-                padding: 6px;
-            }
-
-            .dropdown-btn {
-                font-size: 14px;
-            }
-
-            .degree-career a {
-                font-size: 12px;
-                margin: 0 10px;
-            }
-
-            .login a {
-                font-size: 12px;
-            }
-
-            .join-btn button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-        }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="left-section">
-                <div class="logo">
-                    <a href="home/index.html">
-                        <h2>Course Hub</h2>
-                    </a>
-                </div>
+    <nav id="navbar">
+        <!-- Left Side -->
+        <div class="nav-left">
+            <a href="../Course hub 1/home/index.html" class="logo">Course Hub</a>
 
-                <!-- Explore Dropdown -->
-                <div class="dropdown">
-                    <button class="dropdown-btn">
-                        <strong>Explore</strong>
-                        <i class="fas fa-arrow-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Explore roles</a>
-                        <a href="#">Explore Categories</a>
-                        <a href="#">Explore trading skill</a>
-                        <a href="#">Earn a professional certificate</a>
-                        <a href="#">Earn an online degree</a>
-                    </div>
-                </div>
-
-                <!-- Search Bar -->
-                <div class="search-bar">
-                    <input type="text" placeholder="What do you want to learn?" />
-                    <button class="search-btn" aria-label="Search">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/search.png" alt="Search Icon" />
-                    </button>
+            <div class="dropdown">
+                <button class="dropdown-toggle">Explore</button>
+                <div class="dropdown-menu">
+                    <a href="../degree/degree.html">Explore roles</a>
+                    <a href="../degree/degree.html">Explore Catogaries</a>
+                    <a href="../degree/degree.html">Explore trading skill</a>
+                    <a href="../degree/degree.html">Earn a professional certificate</a>
+                    <a href="../degree/degree.html">Earn a online degree</a>
                 </div>
             </div>
 
-            <!-- Right side: Online Degree, Career, Login, Join for Free -->
-            <div class="right-section">
-                <div class="degree-career">
-                    <a href="#">Online Degree</a>
-                    <a href="#">Career</a>
-                </div>
-
-                <div id="auth-buttons">
-                    <!-- Login or Logout button will appear here based on the login status -->
-                </div>
-
-                <div class="join-btn">
-                    <a href="singup.html"><button><strong>Join for Free</strong></button></a>
-                </div>
+            <div class="search-bar">
+                <input type="text" placeholder="What do you want to learn?">
+                <button>🔍</button>
             </div>
+        </div>
 
-        </nav>
-    </header>
+        <!-- Hamburger Menu -->
+        <div class="menu-toggle" onclick="toggleNavbar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
+        <!-- Right Side -->
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="../Course hub 1/degree/degree.html">Online Degree</a>
+                <a href="../Course hub 1/career/career.html">Career</a>
+                <a href="../Course hub 1/login.html" style="color: #0056d2;">Login</a>
+            </div>
+            <a href="../Course hub 1/singup.html"><button class="join-btn">Join for Free</button></a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleNavbar() {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('active');
+        }
+    </script>
     <!-- Login Form -->
     <div class="login-container">
         <h2>Login</h2>
@@ -463,40 +424,40 @@
     </div>
 
     <script>
-     // Check if the user is logged in
-window.onload = function () {
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        // Check if the user is logged in
+        window.onload = function () {
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-    if (isLoggedIn) {
-        // If logged in, show logout button and hide login form
-        document.getElementById("auth-buttons").innerHTML = `
+            if (isLoggedIn) {
+                // If logged in, show logout button and hide login form
+                document.getElementById("auth-buttons").innerHTML = `
             <a href="#" id="logout-btn" class="btn">Logout</a>
         `;
-        document.getElementById("login-form").style.display = "none"; // Hide login form
-    } else {
-        // If not logged in, show login button
-        document.getElementById("auth-buttons").innerHTML = `
+                document.getElementById("login-form").style.display = "none"; // Hide login form
+            } else {
+                // If not logged in, show login button
+                document.getElementById("auth-buttons").innerHTML = `
         `;
-    }
+            }
 
-    // Logout functionality
-    const logoutButton = document.getElementById("logout-btn");
-    if (logoutButton) {
-        logoutButton.addEventListener("click", function () {
-            localStorage.setItem("isLoggedIn", "false"); // Set login status to false
-            window.location.href = "login.html"; // Redirect to login page
+            // Logout functionality
+            const logoutButton = document.getElementById("logout-btn");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", function () {
+                    localStorage.setItem("isLoggedIn", "false"); // Set login status to false
+                    window.location.href = "login.html"; // Redirect to login page
+                });
+            }
+        };
+
+        // Handle login button click
+        document.getElementById("login-btn")?.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulate a successful login
+            localStorage.setItem("isLoggedIn", "true"); // Mark the user as logged in
+            window.location.href = "home/index.html"; // Redirect to index.html (main page)
         });
-    }
-};
-
-// Handle login button click
-document.getElementById("login-btn")?.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Simulate a successful login
-    localStorage.setItem("isLoggedIn", "true"); // Mark the user as logged in
-    window.location.href = "home/index.html"; // Redirect to index.html (main page)
-});
 
     </script>
 </body>
