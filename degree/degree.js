@@ -1,4 +1,14 @@
 
+// navbar sidebar
+function toggleSidebar() {
+  var sidebar = document.getElementById("mobileSidebar");
+  if (sidebar.style.width === "250px") {
+    sidebar.style.width = "0";
+  } else {
+    sidebar.style.width = "250px";
+  }
+}
+
 // dropdown
 // Optional JavaScript if you want to toggle the dropdown manually (without hover)
 document.querySelector('.dropdown button').addEventListener('click', function () {

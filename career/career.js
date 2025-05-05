@@ -1,3 +1,22 @@
+// navbar sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById("mobileSidebar");
+    sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+  }
+  
+  // Close sidebar when clicking outside navbar 
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("mobileSidebar");
+    const hamburger = document.querySelector(".hamburger");
+  
+    // If sidebar is open and click is outside sidebar and hamburger
+    if (sidebar.style.width === "250px" &&
+      !sidebar.contains(event.target) &&
+      !hamburger.contains(event.target)) {
+      sidebar.style.width = "0";
+    }
+  });
+
 // section 4
 
 document.addEventListener('DOMContentLoaded', function () {

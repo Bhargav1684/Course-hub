@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Hub, Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="website icon" type="png" href="../Course hub 1/home/icon.png">
+    <style>
+        /* General styles */
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            padding-top: 65px;
+        }
+
+        /* Navbar */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ffffff;
+        }
+
+        .top-bar {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+        }
+
+        .hamburger {
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .logo-right {
+            font-weight: bold;
+            font-size: 20px;
+            color: #0056d2;
+            text-decoration: none;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            flex-wrap: wrap;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056d2;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .logo:hover {
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links a:hover {
+            color: #0056d2;
+        }
+
+        .join-btn {
+            background-color: #ffffff;
+            color: #0056d2;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border: 1px solid #0056d2;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .join-btn:hover {
+            background-color: #e3eeff;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            border: 1px solid #0056d2;
+            display: flex;
+            align-items: center;
+            border-radius: 50px;
+            padding: 0 20px;
+            background-color: #ffffff;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 6px;
+            font-size: 12px;
+        }
+
+        .search-bar button {
+            padding: 6px 10px;
+            border: none;
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+
+        .dropdown {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .dropdown-toggle {
+            color: #0056d2;
+            background-color: #ffffff;
+            border: 1px solid #0056d2;
+            padding: 8px 15px;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .dropdown-toggle:hover {
+            background-color: #e3eeff;
+            text-decoration: none;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            z-index: 1000;
+            min-width: 800px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #0f1114;
+            width: 250px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5;
+            color: #0056d2;
+            text-decoration: underline #0056d2;
+        }
+
+        .mobile-sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .mobile-sidebar a {
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .mobile-sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            #navbar {
+                display: none;
+            }
+
+            .top-bar {
+                display: flex;
+            }
+
+            .mobile-sidebar {
+                width: 0;
+            }
+
+            .search-bar {
+                display: none;
+            }
+        }
+
+        /* Sign up form */
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .social-login a {
+            text-decoration: none;
+            width: 48%;
+            padding: 12px;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+            color: white;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .social-login a:hover {
+            opacity: 0.8;
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar --->
+    <header>
+
+        <div class="top-bar">
+            <button class="hamburger" onclick="toggleSidebar()">☰</button>
+            <a href="../home/index.html" class="logo-right">Course Hub</a>
+        </div>
+
+        <nav id="navbar">
+
+            <div class="nav-left">
+                <a href="../home/index.html" class="logo">Course Hub</a>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Explore</button>
+                    <div class="dropdown-menu">
+                        <a href="../degree/degree.html">Explore roles</a>
+                        <a href="../degree/degree.html">Explore Catogaries</a>
+                        <a href="../degree/degree.html">Explore trading skill</a>
+                        <a href="../degree/degree.html">Earn a professional certificate</a>
+                        <a href="../degree/degree.html">Earn a online degree</a>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="What do you want to learn?">
+                    <button>🔍</button>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="../degree/degree.html">Online Degree</a>
+                    <a href="../career/career.html">Career</a>
+                    <a href="../user-data/login.html" style="color: #0056d2;">Login</a>
+                </div>
+                <a href="../user-data/singup.html"><button class="join-btn">Join for Free</button></a>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar for small screens -->
+        <div id="mobileSidebar" class="mobile-sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+            <a href="../degree/degree.html">Explore Roles</a>
+            <a href="../degree/degree.html">Explore Categories</a>
+            <a href="../degree/degree.html">Trading Skill</a>
+            <a href="../degree/degree.html">Certificates</a>
+            <a href="../degree/degree.html">Online Degree</a>
+            <a href="../career/career.html">Career</a>
+            <a href="../login.html">Login</a>
+            <a href="../singup.html">Join for Free</a>
+        </div>
+    </header>
+
+    <script>
+
+        // navbar sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById("mobileSidebar");
+            sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+        }
+
+        // Close sidebar when clicking outside navbar 
+        document.addEventListener("click", function (event) {
+            const sidebar = document.getElementById("mobileSidebar");
+            const hamburger = document.querySelector(".hamburger");
+
+            // If sidebar is open and click is outside sidebar and hamburger
+            if (sidebar.style.width === "250px" &&
+                !sidebar.contains(event.target) &&
+                !hamburger.contains(event.target)) {
+                sidebar.style.width = "0";
+            }
+        });
+    </script>
+
+    <!-- Sign Up Form -->
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="confirm-password">Full Name</label>
+                <input type="text" id="confirm-password" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn" id="signup-btn">Sign Up</button>
+        </form>
+
+        <!-- Social Login -->
+        <div class="social-login">
+            <a href="home/index.html" class="google-btn">Sign Up with Google</a>
+            <a href="home/index.html" class="facebook-btn">Sign Up with Facebook</a>
+        </div>
+
+        <!-- Login Link -->
+        <div class="login-link">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Handle sign-up button click
+        document.getElementById("signup-btn")?.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulate a successful sign-up
+            localStorage.setItem("isLoggedIn", "true"); // Mark the user as logged in
+            window.location.href = "home/index.html"; // Redirect to index.html (main page)
+        });
+    </script>
+</body>
+
+</html>

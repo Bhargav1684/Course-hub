@@ -12,96 +12,64 @@
 </head>
 
 <body>
+    
      <!-- navbar --->
-     <nav id="navbar">
-        <!-- Left Side -->
-        <div class="nav-left">
-            <a href="../home/index.html" class="logo">Course Hub</a>
 
-            <div class="dropdown">
-                <button class="dropdown-toggle">Explore</button>
-                <div class="dropdown-menu">
-                    <a href="../degree/degree.html">Explore roles</a>
-                    <a href="../degree/degree.html">Explore Catogaries</a>
-                    <a href="../degree/degree.html">Explore trading skill</a>
-                    <a href="../degree/degree.html">Earn a professional certificate</a>
-                    <a href="../degree/degree.html">Earn a online degree</a>
+     <header>
+
+        <div class="top-bar">
+            <button class="hamburger" onclick="toggleSidebar()">☰</button>
+            <a href="../home/index.html" class="logo-right">Course Hub</a>
+        </div>
+
+        <nav id="navbar">
+
+            <div class="nav-left">
+                <a href="../home/index.html" class="logo">Course Hub</a>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Explore</button>
+                    <div class="dropdown-menu">
+                        <a href="../degree/degree.html">Explore roles</a>
+                        <a href="../degree/degree.html">Explore Catogaries</a>
+                        <a href="../degree/degree.html">Explore trading skill</a>
+                        <a href="../degree/degree.html">Earn a professional certificate</a>
+                        <a href="../degree/degree.html">Earn a online degree</a>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="What do you want to learn?">
+                    <button>🔍</button>
                 </div>
             </div>
 
-            <div class="search-bar">
-                <input type="text" placeholder="What do you want to learn?">
-                <button>🔍</button>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="../degree/degree.html">Online Degree</a>
+                    <a href="../career/career.html">Career</a>
+                    <a href="../user-data/login.html" style="color: #0056d2;">Login</a>
+                </div>
+                <a href="../user-data/singup.html"><button class="join-btn">Join for Free</button></a>
             </div>
+
+        </nav>
+
+        <!-- Sidebar for small screens -->
+        <div id="mobileSidebar" class="mobile-sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+            <a href="../degree/degree.html">Explore Roles</a>
+            <a href="../degree/degree.html">Explore Categories</a>
+            <a href="../degree/degree.html">Trading Skill</a>
+            <a href="../degree/degree.html">Certificates</a>
+            <a href="../degree/degree.html">Online Degree</a>
+            <a href="../career/career.html">Career</a>
+            <a href="../login.html">Login</a>
+            <a href="../singup.html">Join for Free</a>
         </div>
 
-        <!-- Hamburger Menu -->
-        <div class="menu-toggle" onclick="toggleNavbar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <!-- Right Side -->
-        <div class="nav-right">
-            <div class="nav-links">
-                <a href="../degree/degree.html">Online Degree</a>
-                <a href="../career/career.html">Career</a>
-                <a href="../login.html" style="color: #0056d2;">Login</a>
-            </div>
-            <a href="../singup.html"><button class="join-btn">Join for Free</button></a>
-        </div>
-    </nav>
-
-    <script>
-        function toggleNavbar() {
-            const nav = document.getElementById('navbar');
-            nav.classList.toggle('active');
-        }
-    </script>
-
-    <!-- section 1 --->
-    <div class="section-header-1">
-        <h1>Explore roles</h1>
-        <p>Advance in your career with recognized credentials across levels. Choose from 60 roles.</p>
-    </div>
-
-    <div class="cds-course">
-        <div class="dropdown">
-            <p class="proper" onclick="toggleDropdown()">Beginner <span class="arrow"></span></p>
-            <div class="dropdown-content">
-                <p>Beginner</p>
-                <p>Intermediate</p>
-                <p>Advance</p>
-            </div>
-        </div>
-        <a href="../degree/degree.html">
-            <p class="cds-course-1">Popular</p>
-        </a>
-        <a href="../degree/degree.html">
-            <p>Software Engineering & IT</p>
-        </a>
-        <a href="../degree/degree.html">
-            <p>Business</p>
-        </a>
-        <a href="../degree/degree.html">
-            <p>Sales & Marketing</p>
-        </a>
-        <a href="../degree/degree.html">
-            <p>Data Science & Analytics</p>
-        </a>
-        <a href="../degree/degree.html">
-            <p>Healthcare</p>
-        </a>
-    </div>
-
-    <script>
-        function toggleDropdown() {
-            var dropdownContent = document.querySelector('.dropdown-content');
-            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
-        }
-    </script>
-
+    </header>
+    
     <!--- section 2 --->
     <section class="course-section">
 
@@ -396,145 +364,153 @@
     </section>
 
     <!--- text area -->
-    <div class="footer-text">
+    <div class="text-2">
         <p>
-            ¹ Median salary and job opening data are sourced from Lightcast™ Job Postings Report.
-            Content Creator, Machine Learning Engineer and Salesforce Development Representative (1/1/2024 - 12/31/2024)
-            All other job roles (4/1/2024 - 4/1/2025)</p>
+            <sup>1</sup> Median salary and job opening data are sourced from Lightcast™ Job Postings Report.<br>
+            <strong>Content Creator, Machine Learning Engineer,</strong> and <strong>Salesforce Development
+                Representative</strong>
+            (1/1/2024 – 12/31/2024)<br>
+            <strong>All other job roles</strong> (4/1/2024 – 4/1/2025)
+        </p>
     </div>
 
     <!--- footer --->
-    <footer>
+     <!-- footer --->
+     <footer class="footer">
         <div class="footer-container">
-            <!-- First Section: 4 columns of text -->
-            <div class="footer-section">
-                <h4>Technical Skill</h4>
-                <a href="#">ChatGPT</a>
-                <a href="#">Coding</a>
-                <a href="#">Computer Science</a>
-                <a href="#">Cyber Security</a>
-                <a href=#>DevOps</a>
-                <a href="#"> Python</a>
-                <a href="#"> Ethical Hacking</a>
-                <a href="#"> Web Development</a>
-                <a href="#"> Java Programming</a>
-                <a href="#"> Generative AI</a>
+            <div class="footer-column">
+                <h3>Technical Skill</h3>
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">C++</a></li>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Node.js</a></li>
+                    <li><a href="#">Git</a></li>
+                    <li><a href="#">Docker</a></li>
+                </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Analytical Skill</h4>
-                <a href="#"> Artificial Intelligence</a>
-                <a href="#"> Big Data</a>
-                <a href="#"> Business Analysis</a>
-                <a href="#">Data Analytics</a>
-                <a href="#">Data Science</a>
-                <a href="#">Financial Modeling</a>
-                <a href="#">Machine Learning</a>
-                <a href="#">Microsoft Excle</a>
-                <a href="#">Microsoft Excle BI</a>
-                <a href="#">SQL</a>
+            <div class="footer-column">
+                <h3>Analytical Skill</h3>
+                <ul>
+                    <li><a href="#">Data Analysis</a></li>
+                    <li><a href="#">Excel</a></li>
+                    <li><a href="#">SQL</a></li>
+                    <li><a href="#">Power BI</a></li>
+                    <li><a href="#">Tableau</a></li>
+                    <li><a href="#">R Programming</a></li>
+                    <li><a href="#">SAS</a></li>
+                    <li><a href="#">Statistics</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Business Analysis</a></li>
+                </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Business Skill</h4>
-                <a href="#">Accounting</a>
-                <a href="#">Digital Marketing</a>
-                <a href="#">E-commerce</a>
-                <a href="#">Finance</a>
-                <a href="#">Google</a>
-                <a href="#">IBM</a>
-                <a href="#">Grafic Design</a>
-                <a href="#">Marketing</a>
-                <a href="#">Project Management</a>
-                <a href="#">Social Media Marketing</a>
+            <div class="footer-column">
+                <h3>Business Skill</h3>
+                <ul>
+                    <li><a href="#">Project Management</a></li>
+                    <li><a href="#">Agile</a></li>
+                    <li><a href="#">Scrum</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Communication</a></li>
+                    <li><a href="#">Negotiation</a></li>
+                    <li><a href="#">Strategic Planning</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Finance</a></li>
+                </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Career Resources</h4>
-                <a href="#">Essential IT Certifications</a>
-                <a href="#">High-Income Skills to Learn</a>
-                <a href="#">How to Get a PMP Certification</a>
-                <a href="#">How to Learn Artificial Intelligence</a>
-                <a href="#">Popular Cybersecurity Certifications</a>
-                <a href="#">Popular Data Analytics Certifications/a>
-                    <a href="#">What Does a Data Analyst Do?</a>
-                    <a href="#">Career Education Articles</a>
-                    <a href="#">Career Development Resources</a>
-                    <a href="#">Career Aptitude Test</a>
-            </div>
-        </div>
-
-
-        <!-- Footer bottom part -->
-        <div class="footer-container-2">
-            <div class="footer-section">
-                <h4>Course Hub</h4>
-                <a href="#">About</a>
-                <a href="#">What We Offer</a>
-                <a href="#">Leadership</a>
-                <a href="#">Careers</a>
-                <a href="#">Catalog</a>
-                <a href="#">Course Hub Plus</a>
-                <a href="#">Professional Certificate</a>
-                <a href="#">MasterTrack® Certificates</a>
-                <a href="#">Degree</a>
-                <a href="#">For Enterprise</a>
-                <a href="#">For Goverment</a>
-                <a href="#">ECTS Credit Recommendations</a>
-                <a href="#">For Campus</a>
-                <a href="#">Become a Partner</a>
-                <a href="#">Social Impact</a>
-                <a href="#">Free Courses</a>
-            </div>
-
-            <div class="footer-section">
-                <h4>Community</h4>
-                <a href="#">Lerner</a>
-                <a href="#">Partner</a>
-                <a href="#">Beta Tester</a>
-                <a href="#">Blog</a>
-                <a href="#">The Course Hub Podcast</a>
-                <a href="#">Teaching Center</a>
-                <a href="#">Tech Blog</a>
-            </div>
-
-            <div class="footer-section">
-                <h4>Conact US</h4>
-                <a href="#">Email : Support@coursehub.com</a>
-                <a href="#">Phine : (91)1234567890</a>
-                <a href="#">Address : 123 Learning course, Ahmedabad, Gujrat</a>
-            </div>
-
-            <div class="footer-section">
-                <h4>More</h4>
-                <a href="#">Press</a>
-                <a href="#">Investor</a>
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">Help</a>
-                <a href="#">Accessibility</a>
-                <a href="#">Contact</a>
-                <a href="#">Article</a>
-                <a href="#">Directory</a>
-                <a href="#">Affiliates</a>
-                <a href="#">Modern Slavery Statement</a>
-                <a href="#">Manage Cookie Preferences</a>
+            <div class="footer-column">
+                <h3>Career Resource</h3>
+                <ul>
+                    <li><a href="#">Resume Tips</a></li>
+                    <li><a href="#">Interview Guide</a></li>
+                    <li><a href="#">Career Advice</a></li>
+                    <li><a href="#">Job Search</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">LinkedIn Tips</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Freelancing</a></li>
+                    <li><a href="#">Networking</a></li>
+                    <li><a href="#">Personal Branding</a></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Footer bottom section with rights and social icons -->
-        <div class="footer-bottom-alt">
-            <div class="right-reserved">
-                <p>&copy; 2025 Course Hub. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Course Hub</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Data Science</a></li>
+                    <li><a href="#">AI/ML</a></li>
+                    <li><a href="#">Cybersecurity</a></li>
+                    <li><a href="#">Mobile App Dev</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">DevOps</a></li>
+                    <li><a href="#">Blockchain</a></li>
+                    <li><a href="#">Game Dev</a></li>
+                </ul>
             </div>
 
+            <div class="footer-column">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Forums</a></li>
+                    <li><a href="#">Meetups</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Mentorship</a></li>
+                    <li><a href="#">Q&A</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Challenges</a></li>
+                    <li><a href="#">Hackathons</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#">E-Mail: Course@Hub.com</a></li>
+                    <li><a href="#">Mo: (-91) 01234 56789</a></li>
+                    <li><a href="#">Add- Course hub Pass Way, Ahmedabab, Gujrat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Affiliate</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">Docs</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Beta Access</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Course Hub. All Rights Reserved.</p>
             <div class="social-icons">
-                <a href="#" class="fab fa-facebook-f" title="Facebook"></a>
-                <a href="#" class="fab fa-twitter" title="Twitter"></a>
-                <a href="#" class="fab fa-linkedin-in" title="LinkedIn"></a>
-                <a href="#" class="fab fa-instagram" title="Instagram"></a>
-                <a href="#" class="fab fa-whatsapp" title="WhatsApp"></a>
-                <a href="#" class="fab fa-youtube" title="YouTube"></a>
+                <a href="#" class="icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="icon youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
