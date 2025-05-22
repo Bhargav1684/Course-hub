@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course hub, degree, certificate</title>
+    <title>Course hub | degree certificate</title>
     <link rel="stylesheet" href="degree.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="website icon" type="png" href="../home/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
 
     <!-- navbar --->
-
     <header>
 
         <div class="top-bar">
@@ -55,54 +55,58 @@
 
         </nav>
 
-        <!-- Sidebar for small screens -->
+        <!-- Mobile Sidebar -->
         <div id="mobileSidebar" class="mobile-sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
-            <a href="../degree/degree.html">Explore Roles</a>
-            <a href="../degree/degree.html">Explore Categories</a>
-            <a href="../degree/degree.html">Trading Skill</a>
-            <a href="../degree/degree.html">Certificates</a>
-            <a href="../degree/degree.html">Online Degree</a>
-            <a href="../career/career.html">Career</a>
-            <a href="../login.html">Login</a>
-            <a href="../singup.html">Join for Free</a>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search..." />
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../degree/degree.html">Explore Categories</a>
+                <a href="../degree/degree.html">Trading Skill</a>
+                <a href="../degree/degree.html">Certificates</a>
+                <a href="../degree/degree.html">Online Degree</a>
+                <a href="../career/career.html">Career</a>
+                <a href="../user-data/login.html">Login</a>
+            </nav>
+
+            <a href="../user-data/singup.html" class="cta-button">Join for Free</a>
         </div>
 
     </header>
-  <!-- Chatbot Button -->
-  <div class="chatbot-btn" id="chatbot-btn">
-    💬 Tutor
-</div>
 
-<!-- Chatbot Window -->
-<div class="chat-container" id="chat-container">
-    <div class="chat-header">
-        <span>Course Hub AI</span>
-        <button class="close-btn" id="close-chat">X</button>
+    <!-- Chatbot Button -->
+    <div class="chatbot-btn" id="chatbot-btn">
+        💬 Tutor
     </div>
-    <div class="chat-box" id="chat-box">
-    </div>
-    <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Type your message...">
-        <button id="send-btn">Send</button>
-    </div>
-</div>
 
-    <!---text --->
-    <div class="header-text">
-        <h2>Find the right degree for you</h2>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <span>Course Hub AI</span>
+            <button class="close-btn" id="close-chat">X</button>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
     </div>
 
     <!-- Filter and Menu Dropdown -->
+    <div class="header-text">
+        <h3>Find the right degree for you</h3>
+    </div>
+
     <div class="filter-container">
         <strong>Filter by</strong>
-        <div class="dropdown1">
-            <button>
-                program Level
-                <span class="arrow">▼</span> <!-- Arrow icon -->
-            </button>
 
-            <!-- Dropdown Content -->
+        <div class="dropdown1">
+            <button class="dropdown-button">
+                Program Level
+                <span class="arrow">▼</span>
+            </button>
             <div class="dropdown-content">
                 <a href="#">Bachelor's Degree</a>
                 <a href="#">Master's Degree</a>
@@ -111,12 +115,10 @@
         </div>
 
         <div class="dropdown1">
-            <button>
+            <button class="dropdown-button">
                 Subject
-                <span class="arrow">▼</span> <!-- Arrow icon -->
+                <span class="arrow">▼</span>
             </button>
-
-            <!-- Dropdown Content -->
             <div class="dropdown-content">
                 <a href="#">Arts and Humanities</a>
                 <a href="#">Business</a>
@@ -126,306 +128,311 @@
                 <a href="#">Health</a>
             </div>
         </div>
+
+        <div class="filter-btn">
+            <button>Filter</button>
+        </div>
     </div>
 
     <!--- section 1 --->
-    <section class="course-certificates">
-        <div class="certificate-container">
+    <div class="degree-certificate-header">
+        <h3>Courses and Professional Certificates</h3>
+        <h2>New on Course hub</h2>
+        <p>Explore our newest programs, focused on delivering in-demand skills.</p>
+    </div>
 
-            <!-- Certificate Card 1 -->
-            <div class="certificate-card">
-                <img src="https://event.iitg.ac.in/icann2019/Proceedings_LaTeX/2019/IITG_logo.png"
-                    alt="Google IT Support" class="course-image">
-                <div class="course-info">
+    <div class="degree-certificate-wrapper">
+        <button class="slider-1-btn left-1">&#10094;</button>
+
+        <section class="degree-certificate">
+            <!--- card 1 --->
+            <div class="degree-certificate-card">
+                <img src="https://event.iitg.ac.in/icann2019/Proceedings_LaTeX/2019/IITG_logo.png" alt="Course-img"
+                    class="degree-certificate-img">
+                <div class="degree-certificate-info">
                     <p>Indian Institute of Technology Guwahati</p>
                     <h5>Bachelor of Science in Data Science & AI</h5>
                     <p>Name as one of the Word's top universities for the study of data science.</p>
+                    <div class="more-btn">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Certificate Card 2 -->
-            <div class="certificate-card">
-                <img src="https://i.pinimg.com/736x/f5/6b/cd/f56bcd8133f436b410b33637e90a540d.jpg"
-                    alt="Google Cybersecurity" class="course-image">
-                <div class="course-info">
+            <!--- card 2 --->
+            <div class="degree-certificate-card">
+                <img src="https://i.pinimg.com/736x/f5/6b/cd/f56bcd8133f436b410b33637e90a540d.jpg" alt="Course-img"
+                    class="degree-certificate-img">
+                <div class="degree-certificate-info">
                     <p>Birla Institute of Technology & Science, Pilani</p>
                     <h5>Bachelor of Science in Computer Science</h5>
-                    <p>Ranked #5 among technical universities in india.</p>
+                    <p>Ranked #5 among technical universities in india Computer Science Master.</p>
+                    <div class="more-btn">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Certificate Card 3 -->
-            <div class="certificate-card">
-                <img src="https://ir.iitr.ac.in/EventsAbroad/images/resource/IITR-175-logo.jpg"
-                    alt="Google IT Automation with Python" class="course-image">
-                <div class="course-info">
+            <!--- card 3 --->
+            <div class="degree-certificate-card">
+                <img src="https://ir.iitr.ac.in/EventsAbroad/images/resource/IITR-175-logo.jpg" alt="Course-img"
+                    class="degree-certificate-img">
+                <div class="degree-certificate-info">
                     <p>IIT Roorkee</p>
                     <h5>Executive MBA</h5>
                     <p>#3 Universities in india as per the NIRF 2023, IT Roorkee is an institute of National importance.
                     </p>
+                    <div class="more-btn">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Certificate Card 4 -->
-            <div class="certificate-card">
+            <!--- card 4 --->
+            <div class="degree-certificate-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVo7g-IuYT5sw4q2UIbgCR8jrmZXxjJCYcQ&s"
-                    alt="Google Digital Marketing & E-commerce" class="course-image">
-                <div class="course-info">
+                    alt="Course-img" class="degree-certificate-img">
+                <div class="degree-certificate-info">
                     <p>Universities of illinois Urbana-Champaign</p>
                     <h5>Master of Computer Science in Data Science</h5>
                     <p>Rankes #30 in globaly in computer science and information system</p>
+                    <div class="more-btn">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Certificate Card 5 -->
-            <div class="certificate-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdDQmtVVmuiXNxYTZkT704gngS2dZY7XtLoQ&s  "
-                    alt="Google Digital Marketing & E-commerce" class="course-image">
-                <div class="course-info">
+        <button class="slider-1-btn right-1">&#10095;</button>
+    </div>
+
+    <!--- section 2 --->
+    <div class="degree-certificate-header-1">
+        <h3>100% Free</h3>
+        <h2>Start learning with free courses</h2>
+        <p>Explore free online courses from the world's top universities and companies.</p>
+    </div>
+
+    <div class="degree-certificate-2-wrapper">
+        <button class="slider-2-btn left-2">&#10094;</button>
+
+        <section class="degree-certificate-1">
+
+            <!--- card 1 --->
+            <div class="degree-certificate-card-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdDQmtVVmuiXNxYTZkT704gngS2dZY7XtLoQ&s"
+                    alt="Course-img" class="degree-certificate-img-1">
+                <div class="degree-certificate-info-1">
                     <p>Clemson Universities</p>
                     <h5>Master of Science in Computer Science</h5>
                     <p>Ranked #50 in the National Universities ranking</p>
+                    <div class="more-btn-1">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
 
-
-            <!-- Certificate Card 6 -->
-            <div class="certificate-card">
+            <!--- card 2 --->
+            <div class="degree-certificate-card-1">
                 <img src="https://logos-world.net/wp-content/uploads/2022/02/University-Of-Michigan-Emblem.png"
-                    alt="Google Digital Marketing & E-commerce" class="course-image">
-                <div class="course-info">
+                    alt="Course-img" class="degree-certificate-img-1">
+                <div class="degree-certificate-info-1">
                     <p>Universities of Michigan</p>
                     <h5>Master of Applied Data Science</h5>
                     <p>#2 Publc research Universities in U.S.</p>
+                    <div class="more-btn-1">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
 
-
-            <!-- Certificate Card 7 -->
-            <div class="certificate-card">
+            <!--- card 3 --->
+            <div class="degree-certificate-card-1">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwC3yo_iB_SGdI15DtaL9MF3vX7tGbWDoNA&s"
-                    alt="Google Digital Marketing & E-commerce" class="course-image">
-                <div class="course-info">
+                    alt="Course-img" class="degree-certificate-img-1">
+                <div class="degree-certificate-info-1">
                     <p>Northestern Universities</p>
                     <h5>Master of Science in Data Analytics Engineering</h5>
-                    <p></p>
+                    <p>The Best University of Science.</p>
+                    <div class="more-btn-1">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
 
-
-            <!-- Certificate Card 8 -->
-            <div class="certificate-card">
+            <!--- card 4 --->
+            <div class="degree-certificate-card-1">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRmr7tlGUEemkgp839xcuQ1suXCiZx7dvAdQ&s"
-                    alt="Google Digital Marketing & E-commerce" class="course-image">
-                <div class="course-info">
+                    alt="Course-img" class="degree-certificate-img-1">
+                <div class="degree-certificate-info-1">
                     <p>Universities of Pittsburgh</p>
                     <h5>Master of Data Science</h5>
-                    <p>A highly-ranked, carnegie R1 public reserch institute</p>
+                    <p>A highly-ranked, carnegie R1 public institute</p>
+                    <div class="more-btn-1">
+                        <button>
+                            Explore All
+                        </button>
+                    </div>
                 </div>
             </div>
+        </section>
 
-
-            <!-- Pagination Buttons -->
-            <div class="pagination">
-                <div class="pagination-button1">
-                    <span class="arrow">&#8592;</span> <!-- Left Arrow -->
-                </div>
-                <div class="pagination-button2">
-                    <span class="pagination-number">1</span>
-                </div>
-                <div class="pagination-button">
-                    <span class="pagination-number">2</span>
-                </div>
-                <div class="pagination-button">
-                    <span class="pagination-number">3</span>
-                </div>
-                <div class="pagination-button">
-                    <span class="pagination-number">4</span>
-                </div>
-                <div class="pagination-button">
-                    <span class="pagination-number">5</span>
-                </div>
-                <div class="pagination-button1">
-                    <span class="arrow">&#8594;</span> <!-- Right Arrow -->
-                </div>
-            </div>
-    </section>
-
-    <!--- section 2 --->
-    <div class="program-header">
-        <h2>Browse by program level</h2>
-    </div>
-    <div class="program-container">
-        <a href="../home/index.html">
-            <div class="master-container">
-                <strong>Bachelor's Degree</strong>
-            </div>
-        </a>
-
-        <a href="../home/index.html">
-            <div class="master-container">
-                <strong>Master's Degree</strong>
-            </div>
-        </a>
-
-        <a href="../home/index.html">
-            <div class="master-container">
-                <strong>Postgraduate Programs</strong>
-            </div>
-        </a>
+        <button class="slider-2-btn right-2">&#10095;</button>
     </div>
 
     <!--- section 3 --->
-    <div class="category-header">
-        <h2>Browse by Category</h2>
+    <div class="program-header">
+        <h3>Browse by Program Level</h3>
+        <p>Explore our Bachelor's, Master's, Postgraduate Programs, and Course Webinars for Your
+            career.</p>
     </div>
 
-    <div class="category-container">
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Top Indian Degree</strong>
-            </div>
+    <div class="program-container">
+        <a href="../home/index.html" class="program-card">
+            <h5>Bachelor's Degree</h5>
         </a>
-
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Computer Science Degree</strong>
-            </div>
+        <a href="../home/index.html" class="program-card">
+            <h5>Master's Degree</h5>
         </a>
-
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Data Science Degree</strong>
-            </div>
+        <a href="../home/index.html" class="program-card">
+            <h5>Postgraduate Programs</h5>
         </a>
-
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Public Health Degree</strong>
-            </div>
-        </a>
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Data Analytics Degree</strong>
-            </div>
-        </a>
-
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Top European Degree</strong>
-            </div>
-        </a>
-
-
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>Business & MBA Degree</strong>
-            </div>
-        </a>
-
-        <a href="../home/index.html">
-            <div class="course-category">
-                <strong>IT Degree</strong>
-            </div>
+        <a href="../home/index.html" class="program-card">
+            <h5>Course Webinar</h5>
         </a>
     </div>
 
     <!--- section 4  --->
-    <section class="affordable-course">
-        <div class="affordable-container">
+    <section class="course-section-4-container">
 
-            <!-- Certificate Card 1 -->
-            <div class="affordable-header">
-                <h2>Affordable tuition with flexible payment options</h2>
-                <p>Pursue your degree with affordable tuition, flexible payment options that let you pay as you go, and
-                    financial aid opportunities, including scholarships.</p>
-                <button>
-                    View All
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-
-            <!-- Certificate Card 2 -->
-            <div class="affordable-card">
-                <img src="https://remadeinstitute.org/wp-content/uploads/2023/06/member-university-of-illinois.png"
-                    alt="Google IT Support" class="course-image1">
-                <div class="course-info">
-                    <p>University of Illinois Urbana-champaign</p>
-                    <h5>Master of Science in Management</h5>
-                    <p>#10 in Top Public Universities in the U.S.</p>
-                    <p>Application due Feb 1,2025</p>
-                </div>
-            </div>
-
-            <!-- Certificate Card 3 -->
-            <div class="affordable-card">
-                <img src="https://logowik.com/content/uploads/images/university-of-london9859.jpg"
-                    alt="Google IT Support" class="course-image1">
-                <div class="course-info">
-                    <p>University of London</p>
-                    <h5>Master of Science in Cyber Security</h5>
-                    <p>Ranked #30 in U.K.</p>
-                    <p>Application due Jan 1, 2025</p>
-                </div>
-            </div>
-
-            <!-- Certificate Card 4 -->
-            <div class="affordable-card">
-                <img src="https://images.seeklogo.com/logo-png/30/1/university-of-colorado-boulder-logo-png_seeklogo-306896.png"
-                    alt="Google IT Support" class="course-image1">
-                <div class="course-info">
-                    <p>University of Colorado Boulder</p>
-                    <h5>Master of Science in Data Science</h5>
-                    <p>#38 University in the world ( Academic Ranking of World Universities, 2019)</p>
-                    <p>Application due April 18, 2025</p>
-                </div>
-            </div>
+        <div class="course-section-4-header">
+            <h3>Affordable tuition with flexible payment options</h3>
+            <p>Pursue your degree with affordable tuition, flexible payment options that let you pay as you go, and
+                financial aid opportunities, including scholarships.</p>
+            <button>
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
+
+        <div class="career-slider-wrapper">
+            <button class="slider-btn left">&#10094;</button>
+
+            <div class="course-section-container" id="courseSlider">
+
+                <!-- Card 1 -->
+                <div class="course-section-4-card">
+                    <img src="https://remadeinstitute.org/wp-content/uploads/2023/06/member-university-of-illinois.png"
+                        alt="University of Illinois" class="course-image-4">
+                    <div class="course-section-4-info">
+                        <p>University of Illinois Urbana-Champaign</p>
+                        <h5>Master of Science in Management</h5>
+                        <p>#10 in Top Public Universities in the U.S.</p>
+                        <a><mark>Application due Feb 1, 2025</mark></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="course-section-4-card">
+                    <img src="https://logowik.com/content/uploads/images/university-of-london9859.jpg"
+                        alt="University of London" class="course-image-4">
+                    <div class="course-section-4-info">
+                        <p>University of London</p>
+                        <h5>Master of Science in Cyber Security</h5>
+                        <p>Ranked #30 in U.K.</p>
+                        <a><mark>Application due Jan 1, 2025</mark></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="course-section-4-card">
+                    <img src="https://images.seeklogo.com/logo-png/30/1/university-of-colorado-boulder-logo-png_seeklogo-306896.png"
+                        alt="University of Colorado Boulder" class="course-image-4">
+                    <div class="course-section-4-info">
+                        <p>University of Colorado Boulder</p>
+                        <h5>Master of Science in Data Science</h5>
+                        <p>#38 University in the world</p>
+                        <a><mark>Application due April 18, 2025</mark></a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-btn right">&#10095;</button>
+        </div>
+
     </section>
 
+    <!-- for small screen -->
+    <div class="course-section-4-header-mobile">
+        <h3>Affordable tuition with flexible payment options</h3>
+        <p>Pursue your degree with affordable tuition, flexible payment options that let you pay as you go,
+            and
+            financial aid opportunities, including scholarships.</p>
+        <button>
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
     <!-- section 5 --->
-    <div class="affordable-container2">
-        <section class="affordable-course2">
-            <div class="affordable-container">
+    <section class="course-section-5-container">
 
-                <!-- Certificate Card 1 -->
-                <div class="affordable-header">
-                    <h2>Designed for working adults</h2>
-                    <p>Enroll in flexible, 100% online degree programs. Set your own schedule to balance your work and
-                        personal commitments and complete coursework at your own pace.</p>
-                    <button>
-                        View All
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
+        <div class="course-section-5-header">
+            <h3>Designed for working adults</h3>
+            <p>Enroll in flexible, 100% online degree programs. Set your own schedule to balance your work and
+                personal commitments and complete coursework at your own pace.</p>
+            <button>
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
 
-                <!-- Certificate Card 2 -->
-                <div class="affordable-card">
+        <div class="career-slider-wrapper">
+            <button class="slider-btn left">&#10094;</button>
+
+            <div class="course-section-5" id="courseSlider">
+
+                <!-- card 1 -->
+                <div class="course-section-5-card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfJMIOowYl7HD9nOAQLgFUSDkA1RLr2xiNxg&s"
-                        alt="Google IT Support" class="course-image1">
-                    <div class="course-info">
+                        alt="card-img" class="course-image-5">
+                    <div class="course-section-5-info">
                         <p>Indian Institute of Technology Guwahati</p>
                         <h5>Bachelor of Science in Data Science & AI</h5>
                         <p>Named as one of the worl's top universities for the study of data science</p>
                     </div>
                 </div>
 
-                <!-- Certificate Card 3 -->
-                <div class="affordable-card">
+                <!-- card 2 -->
+                <div class="course-section-5-card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc_6hJCaYihFF_AALN3osmK9tIDGygLvdkTw&s"
-                        alt="Google IT Support" class="course-image1">
-                    <div class="course-info">
+                        alt="card-img" class="course-image-5">
+                    <div class="course-section-5-info">
                         <p>Birla Institue of Technology & Science, Pilani</p>
                         <h5>Bachelor of Science in Computer Science</h5>
                         <p>Ranked #7 among Technical Universities in India</p>
                     </div>
                 </div>
 
-                <!-- Certificate Card 4 -->
-                <div class="affordable-card">
+                <!-- card 3 -->
+                <div class="course-section-5-card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XuXs858wHlLEydCN-WjunvVKaaVdqhGjKg&s"
-                        alt="Google IT Support" class="course-image1">
-                    <div class="course-info">
+                        alt="card-img" class="course-image-5">
+                    <div class="course-section-5-info">
                         <p>IIT Roorkee</p>
                         <h5>Executive MBA</h5>
                         <p>#9 Universities in India as per the 2023, IIT Rookree is an institute of National importance
@@ -433,264 +440,318 @@
                     </div>
                 </div>
             </div>
-        </section>
+
+            <button class="slider-btn right">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- for small screen -->
+    <div class="course-section-4-header-mobile">
+        <h3>Designed for working adults</h3>
+        <p>Enroll in flexible, 100% online degree programs. Set your own schedule to balance your work and
+            personal commitments and complete coursework at your own pace.</p>
+        <button>
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
     </div>
 
     <!--- section 6  --->
-    <section class="affordable-course-6">
-        <div class="affordable-container">
+    <section class="course-section-6-container">
 
-            <!-- Certificate Card 1 -->
-            <div class="affordable-header">
-                <h2>Quality learning from world-class universities</h2>
-                <p>Unlock your potential and pave the way to a successful career by earning a degree from an accredited
-                    university. Learn from expert faculty passionate about helping you achieve your goals.</p>
-                <button>
-                    View All
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
+        <div class="course-section-5-header">
+            <h3>Quality learning from world-class universities</h3>
+            <p>Unlock your potential and pave the way to a successful career by earning a degree from an
+                accredited
+                university. Learn from expert faculty passionate about helping you achieve your goals.</p>
+            <button>
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
 
-            <!-- Certificate Card 2 -->
-            <div class="affordable-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7HKpYVOmNeNge4BJy7A23mFLwbO0rl3eCQ&s"
-                    alt="Google IT Support" class="course-image1">
-                <div class="course-info">
-                    <p>Clemson University</p>
-                    <h5>Master of Science in Computer Science</h5>
-                    <p>Ranked #70 in the National University ranking ( US News & World Report, 2024)</p>
-                    <p>Application due August, 2023</p>
+
+        <div class="career-slider-wrapper">
+            <button class="slider-btn left">&#10094;</button>
+
+            <div class="course-section-5" id="courseSlider">
+
+                <!-- card 1 -->
+                <div class="course-section-6-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7HKpYVOmNeNge4BJy7A23mFLwbO0rl3eCQ&s"
+                        alt="Google IT Support" class="course-image-6">
+                    <div class="course-section-6-info">
+                        <p>Clemson University</p>
+                        <h5>Master of Science in Computer Science</h5>
+                        <p>Ranked #70 in the National University ranking ( US News & World Report, 2024)</p>
+                        <p><mark>Application due August, 2023</mark></p>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="course-section-6-card">
+                    <img src="https://logowik.com/content/uploads/images/university-of-london9859.jpg"
+                        alt="Google IT Support" class="course-image-6">
+                    <div class="course-section-6-info">
+                        <p>University of London</p>
+                        <h5>Bachelor of Science in Computer Science</h5>
+                        <p>Specialise in ML & AI, data science, web and mobile development, physical computing and loT,
+                            game
+                            development, VR or UX</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="course-section-6-card">
+                    <img src="https://images.seeklogo.com/logo-png/43/2/university-of-michigan-logo-png_seeklogo-433396.png"
+                        alt="Google IT Support" class="course-image-6">
+                    <div class="course-section-6-info">
+                        <p>University of Michigan</p>
+                        <h5>Master of Applied Data Science</h5>
+                        <p>#1 Public reserch university in the U.S.</p>
+                        <p><mark>Application due june 1, 2025</mark></p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Certificate Card 3 -->
-            <div class="affordable-card">
-                <img src="https://logowik.com/content/uploads/images/university-of-london9859.jpg"
-                    alt="Google IT Support" class="course-image1">
-                <div class="course-info">
-                    <p>University of London</p>
-                    <h5>Bachelor of Science in Computer Science</h5>
-                    <p>Specialise in ML & AI, data science, web and mobile development, physical computing and loT, game
-                        development, VR or UX</p>
-                    <p></p>
-                </div>
-            </div>
-
-            <!-- Certificate Card 4 -->
-            <div class="affordable-card">
-                <img src="https://images.seeklogo.com/logo-png/43/2/university-of-michigan-logo-png_seeklogo-433396.png"
-                    alt="Google IT Support" class="course-image1">
-                <div class="course-info">
-                    <p>University of Michigan</p>
-                    <h5>Master of Applied Data Science</h5>
-                    <p>#1 Public reserch university in the U.S.</p>
-                    <p>Application due june 1, 2025</p>
-                </div>
-            </div>
+            <button class="slider-btn right">&#10095;</button>
         </div>
     </section>
+
+    <!-- for small screen -->
+    <div class="course-section-4-header-mobile">
+        <h3>Quality learning from world-class universities</h3>
+        <p>Unlock your potential and pave the way to a successful career by earning a degree from an
+            accredited
+            university. Learn from expert faculty passionate about helping you achieve your goals.</p>
+        <button>
+            View All
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
 
     <!-- section 7 -->
+    <div class="faculty-header">
+        <h3>Learn from Expert Faculty</h3>
+    </div>
+
     <section class="faculty-section">
-        <div class="faculty-header">
-            <h2>Learn from Expert Faculty</h2>
+        <!-- card 1 -->
+        <div class="faculty-card">
+            <div class="faculty-info">
+                <p>University of Colorado Boulder</p>
+                <h5>Master of Engineering in Engineering Management</h5>
+                <div class="faculty-img-name">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
+                        alt="faculty-img" class="faculty-img">
+                    <h5>Jon Legar</h5>
+                </div>
+                <div class="course-name">
+                    <p>Professor in Engineering Practice</p>
+                </div>
+            </div>
         </div>
 
-        <div class="faculty-container">
-
-            <!-- card 1 -->
-            <div class="faculty-card">
-                <div class="faculty-info">
-                    <p class="university-name">University of Colorado Boulder</p>
-                    <h5 class="graduation-field">Master of Engineering in Engineering Management</h5>
-                    <div class="faculty-image-name">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
-                            alt="Faculty 1" class="faculty-image">
-                        <h3>Jon Legar</h3>
-                    </div>
-                    <p class="course-name">Professor in Engineering Practice</p>
+        <!-- card 2 -->
+        <div class="faculty-card">
+            <div class="faculty-info">
+                <p>University of Michigan</p>
+                <h5>Master of Public Health</h5>
+                <div class="faculty-img-name">
+                    <img src="https://xsgames.co/randomusers/assets/avatars/male/31.jpg" alt="faculty-img"
+                        class="faculty-img">
+                    <h5>Sharon L.R.</h5>
+                </div>
+                <div class="course-name">
+                    <p>Professor in Web Development</p>
                 </div>
             </div>
+        </div>
 
-            <!-- card 2 -->
-            <div class="faculty-card">
-                <div class="faculty-info">
-                    <p class="university-name">University of Michigan</p>
-                    <h5 class="graduation-field">Master of Public Health</h5>
-                    <div class="faculty-image-name">
-                        <img src="https://xsgames.co/randomusers/assets/avatars/male/31.jpg" alt="Faculty 2"
-                            class="faculty-image">
-                        <h3>Sharon L.R.</h3>
-                    </div>
-                    <p class="course-name">Professor in Web Development</p>
+        <!-- card 3 -->
+        <div class="faculty-card">
+            <div class="faculty-info">
+                <p>University of Illinois</p>
+                <h5>Master of Business Administration</h5>
+                <div class="faculty-img-name">
+                    <img src="https://wallpapers.com/images/hd/smiling-random-person-graphic-png-trv-4350ryshed47fke7.jpg"
+                        alt="faculty-img" class="faculty-img">
+                    <h5>Gary Noin</h5>
+                </div>
+                <div class="course-name">
+                    <p>Professor in Arthur Andreson Faculty</p>
                 </div>
             </div>
+        </div>
 
-            <!-- card 3 -->
-            <div class="faculty-card">
-                <div class="faculty-info">
-                    <p class="university-name">University of Illinois</p>
-                    <h5 class="graduation-field">Master of Business Administration</h5>
-                    <div class="faculty-image-name">
-                        <img src="https://wallpapers.com/images/hd/smiling-random-person-graphic-png-trv-4350ryshed47fke7.jpg"
-                            alt="Faculty 3" class="faculty-image">
-                        <h3>Gary Noin</h3>
-                    </div>
-                    <p class="course-name">Professor in Arthur Andreson Faculty</p>
+        <!-- card 4 -->
+        <div class="faculty-card">
+            <div class="faculty-info">
+                <p>HEC Paris</p>
+                <h5>MSC in Innovation and Enterpreneurship</h5>
+                <div class="faculty-img-name">
+                    <img src="https://wallpapers.com/images/hd/casual-random-person-portrait-png-wxb89-8b2q9aafvn0s792w.jpg"
+                        alt="faculty-img" class="faculty-img">
+                    <h5>Lorem rean</h5>
+                </div>
+                <div class="course-name">
+                    <p>Affiliate Professor of Management</p>
                 </div>
             </div>
+        </div>
 
-            <!-- card 4 -->
-            <div class="faculty-card">
-                <div class="faculty-info">
-                    <p class="university-name">HEC Paris</p>
-                    <h5 class="graduation-field">MSC in Innovation and Enterpreneurship</h5>
-                    <div class="faculty-image-name">
-                        <img src="https://wallpapers.com/images/hd/casual-random-person-portrait-png-wxb89-8b2q9aafvn0s792w.jpg"
-                            alt="Faculty 3" class="faculty-image">
-                        <h3>Lorem rean</h3>
-                    </div>
-                    <p class="course-name">Affiliate Professor of Management</p>
+        <!-- card 5 -->
+        <div class="faculty-card">
+            <div class="faculty-info">
+                <p>Universidad de los Andes</p>
+                <h5>Master of Engineering Software</h5>
+                <div class="faculty-img-name">
+                    <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="faculty-img" class="faculty-img">
+                    <h5>Ruby Cloun</h5>
+                </div>
+                <div class="course-name">
+                    <p>Professora titular</p>
                 </div>
             </div>
+        </div>
 
-            <!-- card 5 -->
-            <div class="faculty-card">
-                <div class="faculty-info">
-                    <p class="university-name">Universidad de los Andes</p>
-                    <h5 class="graduation-field">Master of Engineering Software</h5>
-                    <div class="faculty-image-name">
-                        <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Faculty 3"
-                            class="faculty-image">
-                        <h3>Ruby Cloun</h3>
-                    </div>
-                    <p class="course-name">Professora titular</p>
+        <!-- card 6 -->
+        <div class="faculty-card">
+            <div class="faculty-info">
+                <p>University of London</p>
+                <h5>Master of Science in Cyber Security</h5>
+                <div class="faculty-img-name">
+                    <img src="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
+                        alt="faculty-img" class="faculty-img">
+                    <h5>Dairy Mitchell</h5>
                 </div>
-            </div>
-
-            <!-- card 6 -->
-            <div class="faculty-card">
-                <div class="faculty-info">
-                    <p class="university-name">University of London</p>
-                    <h5 class="graduation-field">Master of Science in Cyber Security</h5>
-                    <div class="faculty-image-name">
-                        <img src="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
-                            alt="Faculty 3" class="faculty-image">
-                        <h3>Dairy Mitchell</h3>
-                    </div>
-                    <p class="course-name">Professor of Computer Science</p>
+                <div class="course-name">
+                    <p>Professor of Computer Science</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--- section 8 -->
+    <!-- section 8 -->
     <section class="article-section">
         <div class="article-header">
-            <h2>Gain helpful insight on degree-related topics</h2>
+            <h3>Gain helpful insight on degree-related topics</h3>
             <a href="#">Explore all articles</a>
         </div>
 
-        <div class="article-container">
+        <div class="slider-wrapper-8">
+            <button class="slider-btn-8 left-btn">&#8249;</button>
 
-            <!--- card 1 -->
-            <div class="article-item">
-                <h5>A Guide to Online Bachelor's Degrees</h5>
-                <p>Online bachelor's degrees have become increasingly popular, especially for students in need of
-                    greater flexibility. Learn more about this degree option and the many benefits it has to offer.</p>
-                <div class="article-info">
-                    <p>Last Update on March 9, 2025</p>
-                    <p>Article</p>
+            <div class="article-container">
+
+                <!--- card 1 -->
+                <div class="article-item">
+                    <h5>A Guide to Online Bachelor's Degrees</h5>
+                    <p>Online bachelor's degrees have become increasingly popular, especially for students in need of
+                        greater flexibility. </p>
+                    <div class="article-info">
+                        <p>Last Update on March 9, 2025</p>
+                        <a href="#">Read Article</a>
+                    </div>
+                </div>
+
+                <!--- card 2 -->
+                <div class="article-item">
+                    <h5>A Guide to Online Master's Degrees</h5>
+                    <p>Master's degree come with many benefits and now a growing number of students are opting to earn
+                        their
+                        master’s degree online.</p>
+                    <div class="article-info">
+                        <p>Last Update on July 10, 2024</p>
+                        <a href="#">Read Article</a>
+                    </div>
+                </div>
+
+                <!--- card 3 -->
+                <div class="article-item">
+                    <h5>Should You Go Back to School?</h5>
+                    <p>Going back to school as an adult has the potential to boost your career possibilities and your
+                        income. Check out some questions to ask yourself.</p>
+                    <div class="article-info">
+                        <p>Last Update on March 25, 2025</p>
+                        <a href="#">Read Article</a>
+                    </div>
+                </div>
+
+                <!--- card 4 -->
+                <div class="article-item">
+                    <h5>10 Suprising Benifits of Online Learning</h5>
+                    <p>Interested in pursuing an online educational program? Find out about the specific benefits that
+                        come
+                        with pursuing an online education.</p>
+                    <div class="article-info">
+                        <p>Last Update on March 10, 2025</p>
+                        <a href="#">Read Article</a>
+                    </div>
                 </div>
             </div>
 
-            <!--- card 2 -->
-            <div class="article-item">
-                <h5>A Guide to Online Master's Degrees</h5>
-                <p>Master's degree come with many benefits and now a growing number of students are opting to earn their
-                    master’s degree online.</p>
-                <div class="article-info">
-                    <p>Last Update on July 10, 2024</p>
-                    <p>Article</p>
-                </div>
-            </div>
-
-            <!--- card 3 -->
-            <div class="article-item">
-                <h5>Should You Go Back to School? 5 Things to Consider</h5>
-                <p>Going back to school as an adult has the potential to boost your career possibilities and your
-                    income. Check out some questions to ask yourself as you figure out what's best for you.</p>
-                <div class="article-info">
-                    <p>Last Update on March 25, 2025</p>
-                    <p>Article</p>
-                </div>
-            </div>
-
-            <!--- card 4 -->
-            <div class="article-item">
-                <h5>10 Suprising Benifits of Online Learning in 2025</h5>
-                <p>Interested in pursuing an online educational program? Find out about the specific benefits that come
-                    with pursuing an online education.</p>
-                <div class="article-info">
-                    <p>Last Update on March 10, 2025</p>
-                    <p>Article</p>
-                </div>
-            </div>
+            <button class="slider-btn-8 right-btn">&#8250;</button>
         </div>
+
     </section>
 
     <!--- section 9 --->
     <div class="question-header">
-        <h2>Frequently Asked Questions</h2>
+        <h3>Frequently Asked Questions</h3>
     </div>
 
     <div class="query-section">
-        <!-- FAQ Section -->
         <section class="faq-section">
-            <div class="faq">
-                <div class="question">
-                    <h3><span class="icon"><i class="fas fa-caret-right"></i></span>Are the degree hosted on course hub
-                        from accredited universities?</h3>
-                    <p class="answer">Yes, all online degree program avaible on course hub are directly conference by
-                        accredited. <a style="color: #0056d2;">Accreditation</a>is important because it show that an
-                        institute standards.</p>
-                </div>
-                <div class="question">
-                    <h3><span class="icon"><i class="fas fa-caret-right"></i></span>Can i transfer previously earned
-                        college credit?</h3>
-                    <p class="answer">That depend on the degree You're intrested in earning. many of the baclelor's
-                        degree on course hub of US-based institutaion, such as georgetown university's <a
-                            style="color: #0056d2;">Bachelor of Art in Liberal Studies,</a>allow student</p>
-                </div>
-                <div class="question">
-                    <h3><span class="icon"><i class="fas fa-caret-right"></i></span> Can i take online degree course hub
-                        from anywhere in the world?</h3>
-                    <p class="answer">Yes, all you needs in reliable internet connection. No metter where you are in the
-                        world.</p>
-                </div>
+            <div class="question">
+                <h5><span class="icon"><i class="fas fa-caret-right"></i></span>Are the degree hosted on course hub
+                    from accredited universities?</h5>
+                <p class="answer">Yes, all online degree program avaible on course hub are directly conference by
+                    accredited. <a style="color: #0056d2;">Accreditation</a>is important because it show that an
+                    institute standards.</p>
+            </div>
+            <div class="question">
+                <h5><span class="icon"><i class="fas fa-caret-right"></i></span>Can i transfer previously earned
+                    college credit?</h5>
+                <p class="answer">That depend on the degree You're intrested in earning. many of the baclelor's
+                    degree on course hub of US-based institutaion, such as georgetown university's <a
+                        style="color: #0056d2;">Bachelor of Art in Liberal Studies,</a>allow student</p>
+            </div>
+            <div class="question">
+                <h5><span class="icon"><i class="fas fa-caret-right"></i></span> Can i take online degree course hub
+                    from anywhere in the world?</h5>
+                <p class="answer">Yes, all you needs in reliable internet connection. No metter where you are in the
+                    world.</p>
             </div>
 
             <div class="more-questions">
                 <button id="moreQuestionsBtn">More Questions</button>
                 <div class="additional-questions" id="additionalQuestions">
                     <div class="question">
-                        <h3><span class="icon"><i class="fas fa-caret-right"></i></span> Are the degree hosted on course
+                        <h5><span class="icon"><i class="fas fa-caret-right"></i></span> Are the degree hosted on
+                            course
                             hub
-                            from accredited universities?</h3>
-                        <p class="answer">Yes, all online degree program avaible on course hub are directly conference
+                            from accredited universities?</h5>
+                        <p class="answer">Yes, all online degree program avaible on course hub are directly
+                            conference
                             by
-                            accredited. <a style="color: #0056d2;">Accreditation</a>is important because it show that an
+                            accredited. <a style="color: #0056d2;">Accreditation</a>is important because it show
+                            that an
                             institute standards.</p>
                     </div>
                     <div class="question">
-                        <h3><span class="icon"><i class="fas fa-caret-right"></i></span>Can i transfer previously earned
-                            college credit?</h3>
-                        <p class="answer">That depend on the degree You're intrested in earning. many of the baclelor's
+                        <h5><span class="icon"><i class="fas fa-caret-right"></i></span>Can i transfer previously
+                            earned
+                            college credit?</h5>
+                        <p class="answer">That depend on the degree You're intrested in earning. many of the
+                            baclelor's
                             degree on course hub of US-based institutaion, such as georgetown university's <a
                                 style="color: #0056d2;">Bachelor of Art in Liberal Studies,</a>allow student</p>
                     </div>
                     <div class="question">
-                        <h3><span class="icon"><i class="fas fa-caret-right"></i></span> Do you offer gift cards?</h3>
+                        <h5><span class="icon"><i class="fas fa-caret-right"></i></span> Do you offer gift cards?
+                        </h5>
                         <p class="answer">Yes, we offer gift cards in various denominations. You can purchase them
                             directly from our website.</p>
                     </div>
@@ -698,9 +759,8 @@
             </div>
         </section>
 
-        <!-- More Questions Box on the Right -->
         <div class="more-que">
-            <h3>More Question</h3>
+            <h5>More Question</h5>
             <a href="#">Visit the learner help center</a>
         </div>
     </div>
@@ -845,6 +905,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="degree.js"></script>
 </body>
 

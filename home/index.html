@@ -54,17 +54,24 @@
 
         </nav>
 
-        <!-- Sidebar for small screens -->
+        <!-- Mobile Sidebar -->
         <div id="mobileSidebar" class="mobile-sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
-            <a href="../degree/degree.html">Explore Roles</a>
-            <a href="../degree/degree.html">Explore Categories</a>
-            <a href="../degree/degree.html">Trading Skill</a>
-            <a href="../degree/degree.html">Certificates</a>
-            <a href="../degree/degree.html">Online Degree</a>
-            <a href="../career/career.html">Career</a>
-            <a href="../login.html">Login</a>
-            <a href="../singup.html">Join for Free</a>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search..." />
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../degree/degree.html">Explore Categories</a>
+                <a href="../degree/degree.html">Trading Skill</a>
+                <a href="../degree/degree.html">Certificates</a>
+                <a href="../degree/degree.html">Online Degree</a>
+                <a href="../career/career.html">Career</a>
+                <a href="../user-data/login.html">Login</a>
+            </nav>
+
+            <a href="../user-data/singup.html" class="cta-button">Join for Free</a>
         </div>
     </header>
 
@@ -77,6 +84,11 @@
 
     <!--- hero section -->
     <section class="hero">
+
+        <!--<video autoplay muted loop playsinline>
+            <source src="https://videocdn.cdnpk.net/videos/580bb49a-763a-5304-9aa4-114bb35aaa69/horizontal/previews/watermarked/large.mp4" type="video/mp4">
+        </video>-->
+
         <div class="hero-content">
             <div class="text-content">
                 <h3>Course Hub <i class="fas fa-plus"></i></h3>
@@ -111,14 +123,12 @@
         💬 Tutor
     </div>
 
-    <!-- Chatbot Window -->
     <div class="chat-container" id="chat-container">
         <div class="chat-header">
             <span>Course Hub AI</span>
             <button class="close-btn" id="close-chat">X</button>
         </div>
-        <div class="chat-box" id="chat-box">
-        </div>
+        <div class="chat-box" id="chat-box"></div>
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Type your message...">
             <button id="send-btn">Send</button>
@@ -185,106 +195,134 @@
             <p>Healthcare</p>
         </div>
 
-        <script>
-            function toggleDropdown() {
-                document.querySelector(".dropdown-content").classList.toggle("show");
-            }
+        <div class="career-2-wrapper">
+            <button class="slider-2-btn left-2">&#10094;</button>
 
-            window.onclick = function (e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelector(".dropdown-content").classList.remove("show");
-                }
-            }
+            <div class="course-section">
 
-        </script>
+                <!-- card 1 -->
+                <div class="course-card" id="root">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5rYF1dB5rQdD8Ude60Vcgk/a64d122febc9a54ee56402dd3d012042/Data_Scientist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                        alt="course" class="course-img">
+                    <h5>Data Scientist</h5>
+                    <p>A Data Scientist analyzes large datasets to uncover insights and solve complex problems. They
+                        apply
+                        statistical methods, machine learning, and data visualization tools to inform business
+                        strategies
+                        and
+                        decisions.</p>
+                    <div class="course-card-info">
+                        <h5>If you like:</h5>
+                        <p> analyzing complex datasets, developing machine learning models, and solving statistical
+                            problems
+                            this role is for you.</p>
+                        <h5>₹ 417,574</h5>
+                        <p>Median salary</p>
+                        <h5>Credentials</h5>
+                        <a href="#">IBM Data Science</a>
+                    </div>
+                </div>
 
-        <section class="course-section">
+                <!-- card 2 -->
+                <div class="course-card">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/69cNAmQMmrlgOZiqDhQ2cP/b53c174c81e14d7a4c1a5d307db9a128/Machine_Learning_Engineer-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                        alt="course" class="course-img">
+                    <h5>Machine Learning Engineer</h5>
+                    <p>A Machine Learning Engineer builds and optimizes algorithms that enable computers to learn
+                        from
+                        data.
+                        They work with large datasets, develop models, and apply techniques like neural networks to
+                        enhance
+                        predictive accuracy.</p>
+                    <div class="course-card-info">
+                        <h5>If you like:</h5>
+                        <p>developing machine learning models, working with large datasets, and coding in python or
+                            r
+                            this
+                            role
+                            is for you.</p>
+                        <h5>₹ 234,318</h5>
+                        <p>Median salary</p>
+                        <h5>Credentials</h5>
+                        <a href="#">AI Agent Developer</a>
+                        <a href="#">Machine Learning</a>
+                        <a href="#">+ 1 more</a>
+                    </div>
+                </div>
 
-            <!-- card 1 -->
-            <div class="course-card">
-                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5rYF1dB5rQdD8Ude60Vcgk/a64d122febc9a54ee56402dd3d012042/Data_Scientist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
-                    alt="course" class="course-img">
-                <h5>Data Scientist</h5>
-                <p>A Data Scientist analyzes large datasets to uncover insights and solve complex problems. They apply
-                    statistical methods, machine learning, and data visualization tools to inform business strategies
-                    and
-                    decisions.</p>
-                <div class="course-card-info">
-                    <h5>If you like:</h5>
-                    <p> analyzing complex datasets, developing machine learning models, and solving statistical problems
-                        this role is for you.</p>
-                    <h5>₹ 417,574</h5>
-                    <p>Median salary</p>
-                    <h5>Credentials</h5>
-                    <a href="#">IBM Data Science</a>
+                <!-- card 3 -->
+                <div class="course-card">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/529TZeL8qf9lRVTMIcKPAC/d3f0fea33c0e16076c64b608db7fd4fe/Social_Media_Strategist_-_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                        alt="course" class="course-img">
+                    <h5>Social Media Strategist / Specialist</h5>
+                    <p>A Social Media Strategist creates and executes social media campaigns to build brand
+                        awareness
+                        and
+                        engagement. They analyze metrics, optimize content, and manage platforms to enhance online
+                        presence.
+                    </p>
+                    <div class="course-card-info">
+                        <h5>If you like:</h5>
+                        <p>creating engaging content for social media, analyzing social media performance,
+                            and managing online communities this role is for you.</p>
+                        <h5>₹ 178,318</h5>
+                        <p>Median salary</p>
+                        <h5>Credentials</h5>
+                        <a href="#">Marketing with Tik Tok</a>
+                        <a href="#">Meta Social Media Marketing</a>
+                        <a href="#">+ 2 more</a>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="course-card">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6gKoZ1AVu36CMpmu3N3BZw/51e59b6ed5e46b50bfb98c738b3b2329/data-analyst-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                        alt="course" class="course-img">
+                    <h5>Data Analyst</h5>
+                    <p>A Data Analyst collects, cleans, and interprets data to provide actionable insights. They use
+                        tools
+                        like
+                        Excel, SQL, and Tableau to analyze trends and help businesses make data-driven decisions.
+                    </p>
+                    <div class="course-card-info">
+                        <h5>If you like:</h5>
+                        <p>analyzing data to find insights, creating reports and visualizations, and working with
+                            spreadsheets
+                            and databases this role is for you.</p>
+                        <h5>₹ 268,212</h5>
+                        <p>Median salary</p>
+                        <h5>Credentials</h5>
+                        <a href="#">Generative AI Data Analyst</a>
+                        <a href="#">Google Data Analytics</a>
+                        <a href="#">+ 5 more</a>
+                    </div>
+                </div>
+
+                <!-- card 5 -->
+                <div class="course-card">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/69RZ75WYk4EMRl66PscOh2/fdc38ac1d73a87addfe276dbfddc405c/Project_Manager-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
+                        alt="course" class="course-img">
+                    <h5>Project Manager</h5>
+                    <p>A Project Manager plans, coordinates, and delivers projects on time and within budget. They
+                        manage
+                        resources, risks, and stakeholder communication to ensure successful project outcomes.</p>
+                    <div class="course-card-info">
+                        <h5>If you like:</h5>
+                        <p> planning and executing projects, managing resources and timelines, and communicating
+                            with
+                            stakeholders this role is for you.</p>
+                        <h5>₹ 302,757</h5>
+                        <p>Median salary</p>
+                        <h5>Credentials</h5>
+                        <a href="#">Google Project Management</a>
+                        <a href="#">Microsoft Management</a>
+                        <a href="#">+ 10 more</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- card 2 -->
-            <div class="course-card">
-                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/69cNAmQMmrlgOZiqDhQ2cP/b53c174c81e14d7a4c1a5d307db9a128/Machine_Learning_Engineer-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
-                    alt="course" class="course-img">
-                <h5>Machine Learning Engineer</h5>
-                <p>A Machine Learning Engineer builds and optimizes algorithms that enable computers to learn from data.
-                    They work with large datasets, develop models, and apply techniques like neural networks to enhance
-                    predictive accuracy.</p>
-                <div class="course-card-info">
-                    <h5>If you like:</h5>
-                    <p>developing machine learning models, working with large datasets, and coding in python or r this
-                        role
-                        is for you.</p>
-                    <h5>₹ 234,318</h5>
-                    <p>Median salary</p>
-                    <h5>Credentials</h5>
-                    <a href="#">AI Agent Developer</a><br>
-                    <a href="#">Machine Learning</a><br>
-                    <a href="#">+ 1 more</a>
-                </div>
-            </div>
-
-            <!-- card 3 -->
-            <div class="course-card">
-                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/529TZeL8qf9lRVTMIcKPAC/d3f0fea33c0e16076c64b608db7fd4fe/Social_Media_Strategist_-_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
-                    alt="course" class="course-img">
-                <h5>Social Media Strategist / Specialist</h5>
-                <p>A Social Media Strategist creates and executes social media campaigns to build brand awareness and
-                    engagement. They analyze metrics, optimize content, and manage platforms to enhance online presence.
-                </p>
-                <div class="course-card-info">
-                    <h5>If you like:</h5>
-                    <p>creating engaging content for social media, analyzing social media performance,
-                        and managing online communities this role is for you.</p>
-                    <h5>₹ 178,318</h5>
-                    <p>Median salary</p>
-                    <h5>Credentials</h5>
-                    <a href="#">Marketing with Tik Tok</a><br>
-                    <a href="#">Meta Social Media Marketing</a><br>
-                    <a href="#">+ 2 more</a>
-                </div>
-            </div>
-
-            <!-- card 4 -->
-            <div class="course-card">
-                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6gKoZ1AVu36CMpmu3N3BZw/51e59b6ed5e46b50bfb98c738b3b2329/data-analyst-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
-                    alt="course" class="course-img">
-                <h5>Data Analyst</h5>
-                <p>A Data Analyst collects, cleans, and interprets data to provide actionable insights. They use tools
-                    like
-                    Excel, SQL, and Tableau to analyze trends and help businesses make data-driven decisions.</p>
-                <div class="course-card-info">
-                    <h5>If you like:</h5>
-                    <p>analyzing data to find insights, creating reports and visualizations, and working with
-                        spreadsheets
-                        and databases this role is for you.</p>
-                    <h5>₹ 268,212</h5>
-                    <p>Median salary</p>
-                    <h5>Credentials</h5>
-                    <a href="#">Generative AI Data Analyst</a><br>
-                    <a href="#">Google Data Analytics</a><br>
-                    <a href="#">+ 5 more</a>
-                </div>
-            </div>
-        </section>
+            <button class="slider-2-btn right-2">&#10095;</button>
+        </div>
 
         <div class="section-header-1">
             <h3>Choose your role</h3>
@@ -300,75 +338,74 @@
         <p>Explore our most popular programs, get job-ready for an in-demand career.</p>
     </div>
 
-    <section class="course-certificates">
+    <div class="career-slider-wrapper">
+        <button class="slider-btn left">&#10094;</button>
 
-
-        <!-- Certificate Card 1 -->
-        <div class="certificate-card">
-            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/5e/107f6ec9544c0a9785cd4b16787917/Amie-Hanbury-Hero-Image-.jpg?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="course-info">
-                <h5>Google IT Support</h5>
-                <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
-                <p>Personal Cert ificate</p>
+        <div class="course-certificates">
+            <!-- Certificate Card 1 -->
+            <div class="certificate-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/5e/107f6ec9544c0a9785cd4b16787917/Amie-Hanbury-Hero-Image-.jpg?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google IT Support</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
             </div>
-            <div class="new-ai-skill">New AI Skill</div>
+
+            <!-- Certificate Card 2 -->
+            <div class="certificate-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/53xRQ0CAMlfmPHeIwPSA2S/6c62dcfb76f40dc8c1e9d3ac01257de8/Cybersecurity.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google Cybersecurity</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="certificate-card">
+                <img src="https://www.slashgear.com/img/gallery/google-offers-free-it-support-certification-but-theres-a-catch/intro-1645736065.jpg"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google IT Automation With Python</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="certificate-card">
+                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/70/42c72695b94362a10bd55dc07d79b2/600x600_CourseraImages_Trin.png?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="course-info">
+                    <h5>Google Digital Marketing & E-commerce</h5>
+                    <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
+                    <p>Personal Certificate</p>
+                </div>
+                <div class="new-ai-skill">New AI Skill</div>
+            </div>
         </div>
 
-        <!-- Certificate Card 2 -->
-        <div class="certificate-card">
-            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/53xRQ0CAMlfmPHeIwPSA2S/6c62dcfb76f40dc8c1e9d3ac01257de8/Cybersecurity.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="course-info">
-                <h5>Google Cybersecurity</h5>
-                <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
-                <p>Personal Certificate</p>
-            </div>
-            <div class="new-ai-skill">New AI Skill</div>
-        </div>
-
-        <!-- Certificate Card 3 -->
-        <div class="certificate-card">
-            <img src="https://www.slashgear.com/img/gallery/google-offers-free-it-support-certification-but-theres-a-catch/intro-1645736065.jpg"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="course-info">
-                <h5>Google IT Automation With Python</h5>
-                <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
-                <p>Personal Certificate</p>
-            </div>
-            <div class="new-ai-skill">New AI Skill</div>
-        </div>
-
-        <!-- Certificate Card 4 -->
-        <div class="certificate-card">
-            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/70/42c72695b94362a10bd55dc07d79b2/600x600_CourseraImages_Trin.png?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="course-info">
-                <h5>Google Digital Marketing & E-commerce</h5>
-                <a href="certificate.html">Build toward a degree <i class="fa fa-graduation-cap"></i></a>
-                <p>Personal Certificate</p>
-            </div>
-            <div class="new-ai-skill">New AI Skill</div>
-        </div>
-    </section>
+        <button class="slider-btn right">&#10095;</button>
+    </div>
 
     <div class="button-container">
         <a href="../test.html" class="left-btn"> Show 5 More</a>
         <a href="#" class="right-btn">View All <i class="fas fa-arrow-right"></i></a>
     </div>
-
-    <div class="slide-view">
-        Slide & View More <i class="fas fa-arrow-right"></i>
-    </div>
-      
 
     <!---section 3--->
     <section class="course-section2">
@@ -380,30 +417,38 @@
             <a href="../degree/degree.html">Advance</a>
         </div>
 
-        <div class="course-container2">
-            <div class="course-item2">
-                <img src="https://prod-discovery.edx-cdn.org/cdn-cgi/image/width=auto,height=auto,quality=75,format=webp/media/programs/card_images/04935896-2fe3-4d56-9874-001c97695470-e7060cfd3fa2.png"
-                    alt="Course 1">
-                <h5> <i class="fab fa-google google-icon" style="color: #0056d2;"></i> Microsoft Generative AI
-                    Engineering</h5>
-                <p>Professional Certificate</p>
+        <div class="for-slider-wrapper">
+            <button class="for-btn for-left">&#10094;</button>
+
+            <div class="course-container2">
+                <div class="course-item2">
+                    <img src="https://prod-discovery.edx-cdn.org/cdn-cgi/image/width=auto,height=auto,quality=75,format=webp/media/programs/card_images/04935896-2fe3-4d56-9874-001c97695470-e7060cfd3fa2.png"
+                        alt="Course 1">
+                    <h5> <i class="fab fa-google google-icon" style="color: #0056d2;"></i> Microsoft Generative AI
+                        Engineering</h5>
+                    <p>Professional Certificate</p>
+                </div>
+
+                <div class="course-item2">
+                    <img src="https://media.licdn.com/dms/image/v2/D5612AQHD_0F67Lv4Ig/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1733147514485?e=2147483647&v=beta&t=tW6PKOsVxe0P-w0sj63zAxfCiZ1kpKdzwDY-sWEk_t8"
+                        alt="Course 2">
+                    <h5><i class="fas fa-shopping-cart amazon-icon" style="color: #2ecc71;"></i> Amazon Agentic AI
+                        and
+                        AI
+                        Agents for Leaders</h5>
+                    <p>Specialization</p>
+                </div>
+
+                <div class="course-item2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrFVyd1M5aXAszOyZSqdljJt_RWtrgwLPFAUMx26SGAG0QXtjI1b03tsaohTTJI6_3zB8&usqp=CAU"
+                        alt="Course 3">
+                    <h5><i class="fab fa-microsoft microsoft-icon" style="color: #ff1493;"></i> Microsoft AI & ML
+                        Engineering</h5>
+                    <p>Professional Certificate</p>
+                </div>
             </div>
 
-            <div class="course-item2">
-                <img src="https://media.licdn.com/dms/image/v2/D5612AQHD_0F67Lv4Ig/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1733147514485?e=2147483647&v=beta&t=tW6PKOsVxe0P-w0sj63zAxfCiZ1kpKdzwDY-sWEk_t8"
-                    alt="Course 2">
-                <h5><i class="fas fa-shopping-cart amazon-icon" style="color: #2ecc71;"></i> Amazon Agentic AI and AI
-                    Agents for Leaders</h5>
-                <p>Specialization</p>
-            </div>
-
-            <div class="course-item2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrFVyd1M5aXAszOyZSqdljJt_RWtrgwLPFAUMx26SGAG0QXtjI1b03tsaohTTJI6_3zB8&usqp=CAU"
-                    alt="Course 3">
-                <h5><i class="fab fa-microsoft microsoft-icon" style="color: #ff1493;"></i> Microsoft AI & ML
-                    Engineering</h5>
-                <p>Professional Certificate</p>
-            </div>
+            <button class="for-btn for-right">&#10095;</button>
         </div>
 
         <div class="header-container2">
@@ -419,71 +464,73 @@
         <p>Explore free online courses from the world's top universities and companies.</p>
     </div>
 
-    <section class="free-course-certificates">
-        <!-- Certificate Card 1 -->
-        <div class="free-certificate-card">
-            <img src="https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2020/07/google-cloud-banner-2019.png"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="free-course-info">
-                <h5>Introduction to Genrative AI</h5>
-                <a href="#">Google Cloud</a>
-                <p>Free Course</p>
-            </div>
-            <div class="new-ai-skill">Free</div>
-        </div>
+    <div class="free-wrapper">
+        <button class="free-btn free-left">&#10094;</button>
 
-        <!-- Certificate Card 2 -->
-        <div class="free-certificate-card">
-            <img src="https://media.istockphoto.com/id/594949892/photo/university-of-pennsylvania.jpg?s=612x612&w=0&k=20&c=BkBG2VF-PsivV0hAz4-voWTuVwbkCC5Kl-NCIm6rb3I="
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="free-course-info">
-                <h5>AI in National Security</h5>
-                <a href="#">Competitive Studies Project</a>
-                <p>Free Course</p>
+        <section class="free-course-certificates">
+            <!-- Certificate Card 1 -->
+            <div class="free-certificate-card">
+                <img src="https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2020/07/google-cloud-banner-2019.png"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="free-course-info">
+                    <h5>Introduction to Genrative AI</h5>
+                    <a href="#">Google Cloud</a>
+                    <p>Free Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
             </div>
-            <div class="new-ai-skill">Free</div>
-        </div>
 
-        <!-- Certificate Card 3 -->
-        <div class="free-certificate-card">
-            <img src="https://thumbs.dreamstime.com/b/notebooks-colored-pencils-paper-clips-light-gray-table-inscription-english-learner-banner-266226207.jpg"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="free-course-info">
-                <h5>English for Career Devlopment</h5>
-                <a href="#">University of pennsylvania</a>
-                <p>Free Course</p>
+            <!-- Certificate Card 2 -->
+            <div class="free-certificate-card">
+                <img src="https://media.istockphoto.com/id/594949892/photo/university-of-pennsylvania.jpg?s=612x612&w=0&k=20&c=BkBG2VF-PsivV0hAz4-voWTuVwbkCC5Kl-NCIm6rb3I="
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="free-course-info">
+                    <h5>AI in National Security</h5>
+                    <a href="#">Competitive Studies Project</a>
+                    <p>Free Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
             </div>
-            <div class="new-ai-skill">Free</div>
-        </div>
 
-        <!-- Certificate Card 4 -->
-        <div class="free-certificate-card">
-            <img src="https://media.licdn.com/dms/image/v2/D4D12AQH5nsH1yrEsaQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1707729476807?e=2147483647&v=beta&t=YSi-iMpaS-DASC0kV4TGgTAdQwlz3ZBmk66eyxopHgM"
-                alt="Course Image" class="course-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
-                class="course-logo">
-            <div class="free-course-info">
-                <h5>Introduction to Statistics</h5>
-                <a href="#">Stanford University</a>
-                <p>Free Course</p>
+            <!-- Certificate Card 3 -->
+            <div class="free-certificate-card">
+                <img src="https://thumbs.dreamstime.com/b/notebooks-colored-pencils-paper-clips-light-gray-table-inscription-english-learner-banner-266226207.jpg"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="free-course-info">
+                    <h5>English for Career Devlopment</h5>
+                    <a href="#">University of pennsylvania</a>
+                    <p>Free Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
             </div>
-            <div class="new-ai-skill">Free</div>
-        </div>
-    </section>
 
-    <div class="button-container">
-        <a href="#" class="left-btn"> Show 5 More</a>
-        <a href="#" class="right-btn">View All <i class="fas fa-arrow-right"></i></a>
+            <!-- Certificate Card 4 -->
+            <div class="free-certificate-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D12AQH5nsH1yrEsaQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1707729476807?e=2147483647&v=beta&t=YSi-iMpaS-DASC0kV4TGgTAdQwlz3ZBmk66eyxopHgM"
+                    alt="Course Image" class="course-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo"
+                    class="course-logo">
+                <div class="free-course-info">
+                    <h5>Introduction to Statistics</h5>
+                    <a href="#">Stanford University</a>
+                    <p>Free Course</p>
+                </div>
+                <div class="new-ai-skill">Free</div>
+            </div>
+        </section>
+
+        <button class="free-btn free-right"> &#10095;</button>
     </div>
 
-    <div class="slide-view">
-        Slide & View More <i class="fas fa-arrow-right"></i>
+    <div class="button-container">
+        <a href="../test.html" class="left-btn"> Show 5 More</a>
+        <a href="#" class="right-btn">View All <i class="fas fa-arrow-right"></i></a>
     </div>
 
     <!--section 5--->
@@ -493,133 +540,133 @@
         <p>Breakthrough pricing on 100% online degrees from top universities.</p>
     </div>
 
-    <section class="free-course-certificates-4">
-        <!-- Certificate Card 1 -->
-        <div class="free-certificate-card-4">
-            <img src="https://ugcounselor-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/03/15183238/IIT-Guwahati.jpg"
-                alt="Course Image" class="course-image-4">
-            <div class="free-course-info-4">
-                <h5>Indian institute of Technology Guwahati</h5>
-                <p>Bachelor of Science in Data Science & AI</p>
-                <a href="#">Earn a degree<i class="fas fa-graduation-cap"></i></a>
-                <p>Degree</p>
-            </div>
-        </div>
+    <div class="course-wrapper">
+        <button class="course-btn course-left">&#10094;</button>
 
-        <!-- Certificate Card 2 -->
-        <div class="free-certificate-card-4">
-            <img src="https://images.shiksha.com/mediadata/images/1534224264phpTBHMzY.jpeg" alt="Course Image"
-                class="course-image-4">
-            <div class="free-course-info-4">
-                <h5>University of illinois Urbana-champaign</h5>
-                <p>Master of Business Administration (IMBA)</p>
-                <a href="#">Earn a degree<i class="fas fa-graduation-cap"></i></a>
-                <p>Degree</p>
+        <section class="free-course-certificates-4">
+            <!-- Certificate Card 1 -->
+            <div class="free-certificate-card-4">
+                <img src="https://ugcounselor-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/03/15183238/IIT-Guwahati.jpg"
+                    alt="Course Image" class="course-image-4">
+                <div class="free-course-info-4">
+                    <h5>Indian institute of Technology Guwahati</h5>
+                    <p>Bachelor of Science in Data Science & AI</p>
+                    <a href="#">Earn a degree <i class="fas fa-graduation-cap"></i></a>
+                    <p>Degree</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Certificate Card 3 -->
-        <div class="free-certificate-card-4">
-            <img src="https://admin.galaxyeduworld.com/storage/other-pages/5dc901851e0e6_1.jpg" alt="Course Image"
-                class="course-image-4">
-            <div class="free-course-info-4">
-                <h5>S.P. jain Institute of Management </h5>
-                <p>PG Diploma in Management (PGDM) Online</p>
-                <a href="#">Earn a degree<i class="fas fa-graduation-cap"></i></a>
-                <p>Degree</p>
+            <!-- Certificate Card 2 -->
+            <div class="free-certificate-card-4">
+                <img src="https://images.shiksha.com/mediadata/images/1534224264phpTBHMzY.jpeg" alt="Course Image"
+                    class="course-image-4">
+                <div class="free-course-info-4">
+                    <h5>University of illinois Urbana-champaign</h5>
+                    <p>Master of Business Administration (IMBA)</p>
+                    <a href="#">Earn a degree <i class="fas fa-graduation-cap"></i></a>
+                    <p>Degree</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Certificate Card 4 -->
-        <div class="free-certificate-card-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Rqqg60vKbBN3WjdkkXvdO6jR116-4ZV91Q&s"
-                alt="Course Image" class="course-image-4">
-            <div class="free-course-info-4">
-                <h5>Birla Institute of Technology & Science</h5>
-                <p>Bachelor of Science in Computer Science</p>
-                <a href="#">Earn a degree<i class="fas fa-graduation-cap"></i></a>
-                <p>Degree</p>
+            <!-- Certificate Card 3 -->
+            <div class="free-certificate-card-4">
+                <img src="https://admin.galaxyeduworld.com/storage/other-pages/5dc901851e0e6_1.jpg" alt="Course Image"
+                    class="course-image-4">
+                <div class="free-course-info-4">
+                    <h5>S.P. jain Institute of Management </h5>
+                    <p>PG Diploma in Management (PGDM) Online</p>
+                    <a href="#">Earn a degree <i class="fas fa-graduation-cap"></i></a>
+                    <p>Degree</p>
+                </div>
             </div>
-        </div>
-    </section>
+
+            <!-- Certificate Card 4 -->
+            <div class="free-certificate-card-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Rqqg60vKbBN3WjdkkXvdO6jR116-4ZV91Q&s"
+                    alt="Course Image" class="course-image-4">
+                <div class="free-course-info-4">
+                    <h5>Birla Institute of Technology & Science</h5>
+                    <p>Bachelor of Science in Computer Science</p>
+                    <a href="#">Earn a degree <i class="fas fa-graduation-cap"></i></a>
+                    <p>Degree</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="course-btn course-right">&#10095;</button>
+    </div>
 
     <div class="button-container">
         <a href="#" class="left-btn"> Show 5 More</a>
         <a href="#" class="right-btn">View All <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <div class="slide-view">
-        Slide & View More <i class="fas fa-arrow-right"></i>
-    </div>
-    
     <!--- review section --->
     <div class="review-header">
         <h3>User Reviews</h3>
         <p>See what our User have to say about us!</p>
     </div>
 
-    <div class="reviews-wrapper">
-        <div class="review-container">
-            <div class="review-item">
-                <img src="https://img.freepik.com/free-photo/smiling-man_1098-15443.jpg" alt="Customer Image"
-                    class="review-image">
-                <div class="review-info">
-                    <h5>John Doe</h5>
-                    <p>Senior Developer</p>
-                </div>
-                <div class="review-stars">
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">☆</span>
-                    <p>Great product, really helped me in my daily tasks! Would definitely recommend it.
-                    </p>
-                </div>
-                <a href="#" class="visit-profile">Visit Profile</a>
+    <div class="review-container">
+        <div class="review-item">
+            <img src="https://img.freepik.com/free-photo/smiling-man_1098-15443.jpg" alt="Customer Image"
+                class="review-image">
+            <div class="review-info">
+                <h5>John Doe</h5>
+                <p>Senior Developer</p>
             </div>
-
-            <div class="review-item">
-                <img src="https://img.freepik.com/free-photo/close-up-smiley-woman-outdoors_23-2149002410.jpg"
-                    alt="Customer Image" class="review-image">
-                <div class="review-info">
-                    <h5>Jane Julie</h5>
-                    <p>Project Manager</p>
-                </div>
-                <div class="review-stars">
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">☆</span>
-                    <span class="star">☆</span>
-                    <p>The quality is good, but delivery was delayed. Still, a solid product overall.
-                    </p>
-                </div>
-                <a href="#" class="visit-profile">Visit Profile</a>
+            <div class="review-stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">☆</span>
+                <p>Great product, really helped me in my daily tasks! Would definitely recommend it.
+                </p>
             </div>
-
-            <div class="review-item">
-                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
-                    alt="Customer Image" class="review-image">
-                <div class="review-info">
-                    <h5>Samuel Lee</h5>
-                    <p>Certified Property Manager</p>
-                </div>
-                <div class="review-stars">
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <span class="star">★</span>
-                    <p>Excellent! Exceeded my expectations. Would definitely buy again!</p>
-                </div>
-                <a href="#" class="visit-profile">Visit Profile</a>
-            </div>
+            <a href="#" class="visit-profile">Visit Profile</a>
         </div>
-        <div class="mobile-controls">
-            <button id="prevBtn">‹</button>
-            <button id="nextBtn">›</button>
+
+        <div class="review-item">
+            <img src="https://img.freepik.com/free-photo/close-up-smiley-woman-outdoors_23-2149002410.jpg"
+                alt="Customer Image" class="review-image">
+            <div class="review-info">
+                <h5>Jane Julie</h5>
+                <p>Project Manager</p>
+            </div>
+            <div class="review-stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">☆</span>
+                <span class="star">☆</span>
+                <p>The quality is good, but delivery was delayed. Still, a solid product overall.
+                </p>
+            </div>
+            <a href="#" class="visit-profile">Visit Profile</a>
         </div>
+
+        <div class="review-item">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
+                alt="Customer Image" class="review-image">
+            <div class="review-info">
+                <h5>Samuel Lee</h5>
+                <p>Certified Property Manager</p>
+            </div>
+            <div class="review-stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <p>Excellent! Exceeded my expectations. Would definitely buy again!</p>
+            </div>
+            <a href="#" class="visit-profile">Visit Profile</a>
+        </div>
+    </div>
+    <div class="mobile-controls">
+        <button id="prevBtn">&#10094;</button>
+        <button id="nextBtn">&#10095;</button>
     </div>
 
     <!---courses community--->
@@ -642,7 +689,8 @@
                 <div class="paragraph-content">
                     <p>"Being a mother - especially a Working mother means i'm Constantly trying to
                         juggle
-                        my shedual, my kid's sheduals, and work. I am very greatful for the flexible and remote learning
+                        my shedual, my kid's sheduals, and work. I am very greatful for the flexible and remote
+                        learning
                         programs that
                         course hub has to offer."</p>
                 </div>
@@ -660,7 +708,8 @@
                 <div class="paragraph-content">
                     <p>"From talking courses on course hub, I gained a deep understanding of the UX
                         design
-                        process from start to finish. With the knowledge i gained, I feel prepared for entry-level jobs
+                        process from start to finish. With the knowledge i gained, I feel prepared for entry-level
+                        jobs
                         and
                         internships."</p>
                 </div>
@@ -677,7 +726,8 @@
                 <div class="underline"></div>
                 <div class="paragraph-content">
                     <p>"I really enjoyed my courses. The quizzes, Video, and quick labs provided
-                        helpful hands-on experience. Learning on course hub has given me the confidence and ability to
+                        helpful hands-on experience. Learning on course hub has given me the confidence and ability
+                        to
                         excel
                         in my
                         career. I love this feeling.</p>
@@ -685,8 +735,8 @@
             </div>
         </div>
         <div class="mobile-controls-1">
-            <button id="prevBtn-1">‹</button>
-            <button id="nextBtn-1">›</button>
+            <button id="prevBtn-1"> &#10094;</button>
+            <button id="nextBtn-1"> &#10095;</button>
         </div>
     </div>
 
@@ -758,7 +808,7 @@
         <div class="text-content2">
             <h3>Take the next step toward your personal and professional goals with Course hub.</h3>
             <p>Join now to receive personalized recommendations from the full Course hub catalog.</p>
-            <a href="#" class="cta-button">Join for Free</a>
+            <a href="#" class="cta-button-1">Join for Free</a>
         </div>
     </div>
 

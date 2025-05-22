@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course hub, Explore career path</title>
+    <title>Course hub | Explore career path</title>
     <link rel="stylesheet" href="career.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    
-     <!-- navbar --->
 
-     <header>
+    <!-- navbar --->
+
+    <header>
 
         <div class="top-bar">
             <button class="hamburger" onclick="toggleSidebar()">☰</button>
@@ -55,29 +55,41 @@
 
         </nav>
 
-        <!-- Sidebar for small screens -->
+        <!-- Mobile Sidebar -->
         <div id="mobileSidebar" class="mobile-sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
-            <a href="../degree/degree.html">Explore Roles</a>
-            <a href="../degree/degree.html">Explore Categories</a>
-            <a href="../degree/degree.html">Trading Skill</a>
-            <a href="../degree/degree.html">Certificates</a>
-            <a href="../degree/degree.html">Online Degree</a>
-            <a href="../career/career.html">Career</a>
-            <a href="../login.html">Login</a>
-            <a href="../singup.html">Join for Free</a>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search..." />
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../degree/degree.html">Explore Categories</a>
+                <a href="../degree/degree.html">Trading Skill</a>
+                <a href="../degree/degree.html">Certificates</a>
+                <a href="../degree/degree.html">Online Degree</a>
+                <a href="../career/career.html">Career</a>
+                <a href="../user-data/login.html">Login</a>
+            </nav>
+
+            <a href="../user-data/singup.html" class="cta-button">Join for Free</a>
         </div>
 
     </header>
-    
-    <!--- section 2 --->
-    <section class="course-section">
 
+    <!--- section 1 --->
+    <div class="course-section-header">
+        <h3>Specializations and Professional Certificates</h3>
+        <h2>Most Popular Certificates</h2>
+        <p>Explore our most popular programs, get job-ready for an in-demand career.</p>
+    </div>
+
+    <section class="course-section">
         <!-- card 1 -->
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5rYF1dB5rQdD8Ude60Vcgk/a64d122febc9a54ee56402dd3d012042/Data_Scientist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Data Scientist</h3>
+            <h5>Data Scientist</h5>
             <p>A Data Scientist analyzes large datasets to uncover insights and solve complex problems. They apply
                 statistical methods, machine learning, and data visualization tools to inform business strategies and
                 decisions.</p>
@@ -96,7 +108,7 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/69cNAmQMmrlgOZiqDhQ2cP/b53c174c81e14d7a4c1a5d307db9a128/Machine_Learning_Engineer-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Machine Learning Engineer</h3>
+            <h5>Machine Learning Engineer</h5>
             <p>A Machine Learning Engineer builds and optimizes algorithms that enable computers to learn from data.
                 They work with large datasets, develop models, and apply techniques like neural networks to enhance
                 predictive accuracy.</p>
@@ -117,7 +129,7 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/529TZeL8qf9lRVTMIcKPAC/d3f0fea33c0e16076c64b608db7fd4fe/Social_Media_Strategist_-_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Social Media Strategist / Specialist</h3>
+            <h5>Social Media Strategist / Specialist</h5>
             <p>A Social Media Strategist creates and executes social media campaigns to build brand awareness and
                 engagement. They analyze metrics, optimize content, and manage platforms to enhance online presence.</p>
             <div class="course-card-info">
@@ -137,7 +149,7 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6gKoZ1AVu36CMpmu3N3BZw/51e59b6ed5e46b50bfb98c738b3b2329/data-analyst-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Data Analyst</h3>
+            <h5>Data Analyst</h5>
             <p>A Data Analyst collects, cleans, and interprets data to provide actionable insights. They use tools like
                 Excel, SQL, and Tableau to analyze trends and help businesses make data-driven decisions.</p>
             <div class="course-card-info">
@@ -157,7 +169,7 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3oJkUhDDdHYGFlblXamdg5/8c097f74e872f2fc73ed654247e06e09/Digital_Marketing_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Digital Marketing Specialist</h3>
+            <h5>Digital Marketing Specialist</h5>
             <p>A Digital Marketing Specialist creates and manages online campaigns to drive engagement and conversions.
                 They optimize SEO, SEM, and social media strategies using analytics tools like Google Analytics.</p>
             <div class="course-card-info">
@@ -175,7 +187,7 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/18kiHX0IdNUgJjKwlcS3LJ/59d207b4ccee33744f0cc696e19df868/Statistician-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Statistician</h3>
+            <h5>Statistician</h5>
             <p>A Statistician collects, analyzes, and interprets data to identify trends and patterns. They apply
                 statistical methods to solve problems in fields like healthcare, finance, and government, providing
                 actionable insights.</p>
@@ -195,14 +207,14 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/37jPWSzUOrkwtSr4qE2v0k/39820164a277d4433cc3f8f994367b11/UI-UX_Designer-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>User Interface / User Experience (UI / UX) Designer</h3>
+            <h5>User Interface / User Experience (UI / UX) Designer</h5>
             <p>A UI/UX Designer creates and refines digital interfaces, ensuring they are user-friendly and visually
                 appealing. Key skills include UI design, UX research, and wireframing.</p>
             <div class="course-card-info">
                 <h5>If you like:</h5>
                 <p> creating visually appealing and user-friendly digital interfaces, conducting user research, and
                     designing wireframes and prototypes this role is for you.</p>
-                <h5>₹ </h5>
+                <h5>₹ 125,000</h5>
                 <p>Median salary</p>
                 <h5>Credentials</h5>
                 <a href="#">Google UX Design</a>
@@ -214,7 +226,7 @@
         <div class="course-card">
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/487YlG9Cj9IiB8OXEwSHs1/c109b35631eb941de733d0df69b3d4b4/Cyber_Security_Analyst-hero_2x.png?auto=format%2Ccompress&dpr=2&w=720"
                 alt="course" class="course-img">
-            <h3>Cyber Security Analyst</h3>
+            <h5>Cyber Security Analyst</h5>
             <p>A Cyber Security Analyst monitors and secures an organization’s IT infrastructure. They analyze threats,
                 identify vulnerabilities, and implement security measures to protect sensitive data from cyber attacks.
             </p>
@@ -236,9 +248,9 @@
         <button>Show 7 more</button>
     </div>
 
-    <!--- section 3 --->
+    <!--- section 2 --->
     <div class="section-3-header">
-        <h2>Career resources</h2>
+        <h3>Career resources</h3>
     </div>
 
     <div class="section-3-cds">
@@ -246,124 +258,189 @@
         <p>Skill</p>
         <p>Career advice</p>
         <p>Career path planning</p>
+        <p>Future skill</p>
+        <p>Project management</p>
     </div>
 
-    <div class="career-section">
+    <div class="slider-wrapper-8">
+        <button class="slider-btn-8 left-btn">&#8249;</button>
 
-        <!-- card 1 -->
-        <div class="career-section-card">
-            <h3>What Does a Data Analyst Do? Your 2024 career Guid</h3>
-            <p>Data analysts collect, clean, and interpret data sets to solve problems or answer questions, such as:
-                What kind of customers should a business target in its next ad campaign? What age group is most
-                vulnerable to a particular disease? What patterns in behavior are connected to financial fraud?</p>
-            <p class="summary-date">April 1, 2024 - 8 min read</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="career-section-card">
-            <h3>What is Project Manager? A Career Guid</h3>
-            <p>A project manager is a skilled professional who organizes, plans and executes projects across various
-                industries. You work within the constraints of budgets, schedules, and resources to ensure projects are
-                completed and delivered on time. </p>
-            <p class="summary-date">May 29, 2024</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="career-section-card">
-            <h3>What Does a web Developer Do? ( and How Do I Become One?)</h3>
-            <p>A web developer is a tech professional who designs, builds, and maintains websites and web applications.
-                They can specialize in one part of a website (as a front-end or back-end developer) or be responsible
-                for both (as a full-stack developer.) </p>
-            <p class="summary-date">March 25, 2024 - 7 min read</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="career-section-card">
-            <h3>What Does a UX Designer Do</h3>
-            <p>The term user experience (UX) refers to all aspects of the interaction you have with a digital product,
-                service, or physical product. For example, you have a user experience when using a mobile app or
-                website, checking into a hotel.</p>
-            <p class="summary-date">Suptember 19, 2024 - 9 min read</p>
-        </div>
-    </div>
-
-    <div class="section-2-btn">
-        <button>Show 3 more</button>
-    </div>
-
-    <!--- section 4 --->
-
-    <div class="section-4-header">
-        <h2>Success stories</h2>
-    </div>
-
-    <section class="success-stories-section">
-        <div class="success-stories-container">
+        <div class="career-section">
 
             <!-- card 1 -->
-            <div class="success-stories-card">
-                <div class="success-stories-info">
-
-                    <div class="success-stories-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbgk0yfCOe55931lf6q0osfhGRU-fnH8Im1g&s"
-                            alt="Faculty 1" class="stories-image">
-                        <h3>Rachel N.</h3>
-                    </div>
-                    <p class="success-text">Google UX Design Professional Certificate</p>
-                    <p class="success-stories-summary">"I loved the process of going through the UX research... it gave
-                        me an appreciation for the pre-work that goes into a product before you start putting pixels
-                        together."</p>
+            <div class="career-section-card">
+                <h5>What Does a Data Analyst Do? Your 2024 career Guid</h5>
+                <p>Data analysts collect, clean, and interpret data sets to solve problems or answer questions, such as:
+                    What kind of customers should a business target in its next ad campaign? What age group.</p>
+                <div class="summary-date">
+                    <p>April 1, 2024 - 8 min read</p>
                 </div>
             </div>
 
             <!-- card 2 -->
-            <div class="success-stories-card">
-                <div class="success-stories-info">
-
-                    <div class="success-stories-img">
-                        <img src="https://media.istockphoto.com/id/1618846975/photo/smile-black-woman-and-hand-pointing-in-studio-for-news-deal-or-coming-soon-announcement-on.jpg?s=612x612&w=0&k=20&c=LUvvJu4sGaIry5WLXmfQV7RStbGG5hEQNo8hEFxZSGY="
-                            alt="Faculty 1" class="stories-image">
-                        <h3>Luvs B.</h3>
-                    </div>
-                    <p class="success-text">Microsoft UX Design Professional Certificate</p>
-                    <p class="success-stories-summary">"I love my new job. I think one of the most validating things in
-                        the world is recognizing that you've helped someone."</p>
+            <div class="career-section-card">
+                <h5>What is Project Manager? A Career Guid</h5>
+                <p>A project manager is a skilled professional who organizes, plans and executes projects across various
+                    industries. You work within the constraints of budgets, schedules, and resources to ensure projects
+                    are
+                    completed and delivered on time. </p>
+                <div class="summary-date">
+                    <p>May 29, 2024 - 10 min read</p>
                 </div>
             </div>
 
             <!-- card 3 -->
-            <div class="success-stories-card">
-                <div class="success-stories-info">
-
-                    <div class="success-stories-img">
-                        <img src="https://xsgames.co/randomusers/assets/avatars/male/6.jpg" alt="Faculty 1"
-                            class="stories-image">
-                        <h3>Doron A.</h3>
-                    </div>
-                    <p class="success-text">Google IT Support Professional Certificate</p>
-                    <p class="success-stories-summary">"The Google UX Design Certificate has been extremely beneficial
-                        to my career. I landed a great job shortly after completion."</p>
+            <div class="career-section-card">
+                <h5>What Does a web Developer Do? ( and How Do I Become One?)</h5>
+                <p>A web developer is a tech professional who designs, builds, and maintains websites and web
+                    applications.
+                    They can specialize in one part of a website. </p>
+                <div class="summary-date">
+                    <p>March 25, 2024 - 7 min read</p>
                 </div>
             </div>
 
             <!-- card 4 -->
-            <div class="success-stories-card">
-                <div class="success-stories-info">
-
-                    <div class="success-stories-img">
-                        <img src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg" alt="Faculty 1"
-                            class="stories-image">
-                        <h3>Vishal J.</h3>
-                    </div>
-                    <p class="success-text">Google Project Manager Professional Certificate</p>
-                    <p class="success-stories-summary">"This program did what I was hoping for...reentry into the
-                        workforce and a new career."</p>
+            <div class="career-section-card">
+                <h5>What Does a UX Designer Do</h5>
+                <p>The term user experience (UX) refers to all aspects of the interaction you have with a digital
+                    product,
+                    service, or physical product. For example, you have a user experience when using a mobile app or
+                    website, checking into a hotel.</p>
+                <div class="summary-date">
+                    <p>Suptember 19, 2024 - 9 min read</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!--- text area -->
+        <button class="slider-btn-8 right-btn">&#8250;</button>
+    </div>
+
+    <div class="section-3-btn">
+        <button>Show more</button>
+    </div>
+
+    <!--- section 4 --->
+    <div class="section-4-header">
+        <h3>Success stories</h3>
+        <p>Visit the Success stories for Expert Faculties</p>
+    </div>
+
+    <div class="success-stories-container">
+        <!-- card 1 -->
+        <div class="success-stories-card">
+            <div class="success-stories-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbgk0yfCOe55931lf6q0osfhGRU-fnH8Im1g&s"
+                    alt="Faculty 1" class="stories-image">
+                <h5>Rachel N.</h5>
+            </div>
+            <p class="success-text">Google UX Design Professional Certificate</p>
+            <p class="success-stories-summary">"I loved the process of going through the UX research... it gave
+                me an appreciation for the pre-work that goes into a product."</p>
+        </div>
+
+        <!-- card 2 -->
+        <div class="success-stories-card">
+            <div class="success-stories-img">
+                <img src="https://media.istockphoto.com/id/1618846975/photo/smile-black-woman-and-hand-pointing-in-studio-for-news-deal-or-coming-soon-announcement-on.jpg?s=612x612&w=0&k=20&c=LUvvJu4sGaIry5WLXmfQV7RStbGG5hEQNo8hEFxZSGY="
+                    alt="Faculty 1" class="stories-image">
+                <h5>Luvs B.</h5>
+            </div>
+            <p class="success-text">Microsoft UX Design Professional Certificate</p>
+            <p class="success-stories-summary">"I love my new job. I think one of the most validating things in
+                the world is recognizing that you've helped someone."</p>
+        </div>
+
+        <!-- card 3 -->
+        <div class="success-stories-card">
+            <div class="success-stories-img">
+                <img src="https://xsgames.co/randomusers/assets/avatars/male/6.jpg" alt="Faculty 1"
+                    class="stories-image">
+                <h5>Doron A.</h5>
+            </div>
+            <p class="success-text">Google IT Support Professional Certificate</p>
+            <p class="success-stories-summary">"The Google UX Design Certificate has been extremely beneficial
+                to my career. I landed a great job shortly after completion."</p>
+        </div>
+
+        <!-- card 4 -->
+        <div class="success-stories-card">
+            <div class="success-stories-img">
+                <img src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg" alt="Faculty 1"
+                    class="stories-image">
+                <h5>Vishal J.</h5>
+            </div>
+            <p class="success-text">Google Project Manager Professional Certificate</p>
+            <p class="success-stories-summary">"This program did what I was hoping for...reentry into the
+                workforce and a new career."</p>
+        </div>
+    </div>
+
+    <!-- section 5 -->
+    <div class="career-header">
+        <h3>Explore More Career option</h3>
+    </div>
+
+    <div class="career-slider-wrapper">
+        <button class="slider-btn left">&#10094;</button>
+        <div class="career-option" id="careerSlider">
+            <!-- Card 1 -->
+            <div class="career-option-card">
+                <img src="https://media.istockphoto.com/id/2158703039/photo/software-engineering-team-engaged-in-problem-solving-and-code-analysis-for-web-development-in.jpg?s=612x612&w=0&k=20&c=tZZh8PQV773ee40fJpk7RFG4N7JFJL5JR1KAmtV00g4="
+                    alt="Career 1">
+                <div class="career-option-info">
+                    <h5>Software Developer</h5>
+                    <p>Create and maintain applications using code. Solve problems with logic and creativity.</p>
+                </div>
+                <div class="links">
+                    <a href="#">Read more</a>
+                    <p>online classes shedual</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="career-option-card">
+                <img src="https://media.istockphoto.com/id/1363104923/photo/diverse-modern-office-businessman-leads-business-meeting-with-managers-talks-uses.jpg?s=612x612&w=0&k=20&c=R6-SufHacJ6bCnviq37kik2Jl6RMdECybcUpEoRuMLs="
+                    alt="Career 2">
+                <div class="career-option-info">
+                    <h5>Data Analyst</h5>
+                    <p>Interpret data and turn it into meaningful insights to support decision-making.</p>
+                </div>
+                <div class="links">
+                    <a href="#">Read more</a>
+                    <p>online classes shedual</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="career-option-card">
+                <img src="https://media.istockphoto.com/id/2169040359/photo/ux-ui-designer-analyzing-user-flow-on-a-tablet-discussing-and-brainstorming-on-wireframes-for.jpg?s=612x612&w=0&k=20&c=85Wt9rsXvkJbNOqTQt7UyyHJDS-J1CeVjvf5tT2kAKo="
+                    alt="Career 3">
+                <div class="career-option-info">
+                    <h5>UX Designer</h5>
+                    <p>Design intuitive and enjoyable experiences for users through research and testing.</p>
+                </div>
+                <div class="links">
+                    <a href="#">Read more</a>
+                    <p>online classes shedual</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="career-option-card">
+                <img src="https://media.istockphoto.com/id/1179884982/photo/developing-new-product.jpg?s=612x612&w=0&k=20&c=PAA0h5tINqzOKUQhCgDr6CNqeLfZgepMniH7dujrh-k="
+                    alt="Career 4">
+                <div class="career-option-info">
+                    <h5>Project Manager</h5>
+                    <p>Plan and execute projects, manage teams and ensure timely delivery within budget.</p>
+                </div>
+                <div class="links">
+                    <a href="#">Read more</a>
+                    <p>online classes shedual</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn right">&#10095;</button>
+    </div>
+
+    <!-- text area -->
     <div class="text-2">
         <p>
             <sup>1</sup> Median salary and job opening data are sourced from Lightcast™ Job Postings Report.<br>
@@ -374,9 +451,8 @@
         </p>
     </div>
 
-    <!--- footer --->
-     <!-- footer --->
-     <footer class="footer">
+    <!-- footer --->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>Technical Skill</h3>

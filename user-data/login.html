@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Hub, Login</title>
+    <title>Course Hub | Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="website icon" type="png" href="../Course hub 1/home/icon.png">
+    <link rel="website icon" type="png" href="../home/icon.png">
     <style>
         /* General styles */
         body {
@@ -20,7 +20,6 @@
         }
 
         /* Navbar */
-
         header {
             position: fixed;
             top: 0;
@@ -36,6 +35,7 @@
             align-items: center;
             padding: 10px 20px;
             background-color: #ffffff;
+            box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
         }
 
         .hamburger {
@@ -58,7 +58,7 @@
             align-items: center;
             padding: 15px 30px;
             flex-wrap: wrap;
-            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ddd;
         }
 
         .nav-left,
@@ -73,7 +73,6 @@
             font-weight: bold;
             color: #0056d2;
             text-decoration: none;
-            margin-right: 20px;
         }
 
         .logo:hover {
@@ -84,6 +83,7 @@
             margin: 0 10px;
             text-decoration: none;
             color: #333;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
@@ -113,7 +113,6 @@
             border-radius: 50px;
             padding: 0 20px;
             background-color: #ffffff;
-            margin-left: 20px;
         }
 
         .search-bar input {
@@ -133,7 +132,6 @@
 
         .dropdown {
             position: relative;
-            margin-left: 20px;
         }
 
         .dropdown-toggle {
@@ -182,35 +180,105 @@
             text-decoration: underline #0056d2;
         }
 
+        /* mobile sidebar */
         .mobile-sidebar {
             height: 100%;
             width: 0;
             position: fixed;
-            z-index: 2000;
             top: 0;
             left: 0;
-            background-color: #f5f5f5;
+            background-color: #fff;
             overflow-x: hidden;
-            transition: 0.3s;
+            transition: width 0.3s ease;
+            z-index: 2000;
             padding-top: 60px;
-        }
-
-        .mobile-sidebar a {
-            padding: 10px 20px;
-            display: block;
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-sidebar .closebtn {
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 16px;
+            right: 24px;
             font-size: 30px;
-            color: #000;
+            color: #333;
+            cursor: pointer;
         }
+
+        .sidebar-search {
+            padding: 0 20px 20px;
+        }
+
+        .sidebar-search input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .sidebar-search input:focus {
+            border-color: #0056d2;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #dce1e7;
+            padding: 24px 0;
+            width: 260px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #2e3a59;
+            text-decoration: none;
+            transition: all 0.25s ease-in-out;
+            border-left: 3px solid transparent;
+            position: relative;
+        }
+
+        .sidebar-nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 28px;
+            right: 28px;
+            height: 1px;
+            background-color: #e4e9f0;
+            opacity: 0.5;
+            color: #0056d2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin: 30px auto 10px;
+            padding: 10px 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff !important;
+            background: linear-gradient(135deg, #0056d2, #003ea1);
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(0, 86, 210, 0.25);
+            max-width: 80%;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #003ea1, #002b78);
+            box-shadow: 0 8px 20px rgba(0, 60, 180, 0.3);
+            transform: translateY(-1px);
+        }
+
 
         @media (max-width: 768px) {
             #navbar {
@@ -231,129 +299,201 @@
         }
 
         /* Login form */
+        .center-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #ffffff;
+            padding: 20px;
+        }
+
         .login-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            padding: 20px;
             width: 100%;
             max-width: 400px;
-            margin: 30px auto;
-        }
-
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group label {
-            font-weight: 500;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
         }
 
-        .input-group input:focus {
-            border-color: #007bff;
-            outline: none;
+        .login-container h3 {
+            font-size: 18px;
+            color: #0056d2;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            padding-right: 3rem;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .form-group .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 70%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
         }
 
         .forgot-password {
-            display: block;
             text-align: right;
-            font-size: 14px;
-            color: #007bff;
+            font-size: 0.9rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .forgot-password a {
             text-decoration: none;
+            color: #007BFF;
         }
 
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        .btn {
+        button.login-btn {
+            border: 1px solid #ddd;
+            background: #0056d2;
             width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
+            padding: 0.75rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .social-login {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .social-login a {
+        button.login-btn:hover {
+            background-color: #0041a8;
+            color: #ffffff;
             text-decoration: none;
-            width: 48%;
-            padding: 12px;
+        }
+
+        .divider {
             text-align: center;
-            border-radius: 6px;
-            font-size: 14px;
+            margin: 1rem 0;
+            position: relative;
         }
 
-        .google-btn {
-            background-color: #db4437;
-            color: white;
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            background: #ccc;
+            top: 50%;
+            width: 40%;
         }
 
-        .facebook-btn {
-            background-color: #3b5998;
-            color: white;
+        .divider::before {
+            left: 0;
         }
 
-        .social-login a:hover {
-            opacity: 0.8;
+        .divider::after {
+            right: 0;
+        }
+
+        .divider span {
+            padding: 0 10px;
+            background: #fff;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .social-login button {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+            color: #333;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .social-login button:hover {
+            background-color: #e3eeff;
+            color: #0056d2;
+        }
+
+        .social-login button i {
+            font-size: 1.2rem;
+        }
+
+        .social-login button i {
+            font-size: 1.2rem;
+        }
+
+        .social-login button:nth-child(1) i {
+            color: #DB4437;
+        }
+
+        .social-login button:nth-child(2) i {
+            color: #3b5998;
+        }
+
+        .social-login button:nth-child(3) i {
+            color: #000000;
         }
 
         .signup-link {
-            display: block;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 1rem;
         }
 
         .signup-link a {
-            color: #007bff;
+            color: #007BFF;
             text-decoration: none;
-        }
-
-        .signup-link a:hover {
-            text-decoration: underline;
+            font-weight: 500;
         }
 
         .organization-login {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 1rem;
         }
 
         .organization-login a {
-            color: #007bff;
+            color: #007BFF;
             text-decoration: none;
+            font-weight: 500;
         }
 
-        .organization-login a:hover {
-            text-decoration: underline;
+        .privacy {
+            font-size: 0.8rem;
+            text-align: center;
+            color: #777;
+            margin-top: 1rem;
+        }
+
+        @media screen and (max-width: 480px) {
+            .login-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -400,111 +540,106 @@
 
         </nav>
 
-        <!-- Sidebar for small screens -->
+
+        <!-- Mobile Sidebar -->
         <div id="mobileSidebar" class="mobile-sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
-            <a href="../degree/degree.html">Explore Roles</a>
-            <a href="../degree/degree.html">Explore Categories</a>
-            <a href="../degree/degree.html">Trading Skill</a>
-            <a href="../degree/degree.html">Certificates</a>
-            <a href="../degree/degree.html">Online Degree</a>
-            <a href="../career/career.html">Career</a>
-            <a href="../login.html">Login</a>
-            <a href="../singup.html">Join for Free</a>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search..." />
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../degree/degree.html">Explore Categories</a>
+                <a href="../degree/degree.html">Trading Skill</a>
+                <a href="../degree/degree.html">Certificates</a>
+                <a href="../degree/degree.html">Online Degree</a>
+                <a href="../career/career.html">Career</a>
+                <a href="../user-data/login.html">Login</a>
+            </nav>
+
+            <a href="../user-data/singup.html" class="cta-button">Join for Free</a>
         </div>
     </header>
 
+    <!-- login form -->
+    <div class="center-wrapper">
+        <div class="login-container">
+            <h3>Welcome back to CourseHub</h3>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email<span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="name@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password<span style="color: red;">*</span></label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                    <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+
+            <div class="divider"><span>or</span></div>
+
+            <div class="social-login">
+                <button><i class="fab fa-google"></i> Continue with Google</button>
+                <button><i class="fab fa-facebook"></i> Continue with Facebook</button>
+                <button><i class="fab fa-apple"></i> Continue with Apple</button>
+            </div>
+
+            <div class="signup-link">
+                New to CourseHub? <a href="singup.html">Sign Up</a>
+            </div>
+
+            <div class="organization-login">
+                <a href="#">Login with your organization</a>
+            </div>
+
+            <div class="privacy">
+                By continuing, you agree to our Terms of Service and Privacy Policy.
+            </div>
+        </div>
+    </div>
+
     <script>
-        // navbar sidebar
+        // navbar 
         function toggleSidebar() {
             const sidebar = document.getElementById("mobileSidebar");
             sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
         }
 
-        // Close sidebar when clicking outside navbar 
         document.addEventListener("click", function (event) {
             const sidebar = document.getElementById("mobileSidebar");
             const hamburger = document.querySelector(".hamburger");
 
-            // If sidebar is open and click is outside sidebar and hamburger
             if (sidebar.style.width === "250px" &&
                 !sidebar.contains(event.target) &&
                 !hamburger.contains(event.target)) {
                 sidebar.style.width = "0";
             }
         });
-    </script>
 
-    <!-- Login Form -->
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="login-form">
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <a href="#" class="forgot-password">Forgot Password?</a>
-            <button type="submit" class="btn" id="login-btn">Login</button>
-        </form>
+        // login form 
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
 
-        <!-- Social Login -->
-        <div class="social-login">
-            <a href="home/index.html" class="google-btn">Login with Google</a>
-            <a href="home/index.html" class="facebook-btn">Login with Facebook</a>
-        </div>
-
-        <!-- Sign Up Link -->
-        <div class="signup-link">
-            <p>Don't have an account? <a href="singup.html">Sign Up</a></p>
-        </div>
-
-        <!-- Login with Organization -->
-        <div class="organization-login">
-            <p>Or <a href="#">Login with your Organization</a></p>
-        </div>
-    </div>
-
-    <script>
-        // Check if the user is logged in
-        window.onload = function () {
-            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-            if (isLoggedIn) {
-                // If logged in, show logout button and hide login form
-                document.getElementById("auth-buttons").innerHTML = `
-            <a href="#" id="logout-btn" class="btn">Logout</a>
-        `;
-                document.getElementById("login-form").style.display = "none"; // Hide login form
-            } else {
-                // If not logged in, show login button
-                document.getElementById("auth-buttons").innerHTML = `
-        `;
-            }
-
-            // Logout functionality
-            const logoutButton = document.getElementById("logout-btn");
-            if (logoutButton) {
-                logoutButton.addEventListener("click", function () {
-                    localStorage.setItem("isLoggedIn", "false"); // Set login status to false
-                    window.location.href = "login.html"; // Redirect to login page
-                });
-            }
-        };
-
-        // Handle login button click
-        document.getElementById("login-btn")?.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Simulate a successful login
-            localStorage.setItem("isLoggedIn", "true"); // Mark the user as logged in
-            window.location.href = "home/index.html"; // Redirect to index.html (main page)
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
         });
-
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = '../home/index.html';
+        }
     </script>
+
+
+
 </body>
 
 </html>

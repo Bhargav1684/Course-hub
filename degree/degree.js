@@ -1,156 +1,184 @@
 
 // navbar sidebar
 function toggleSidebar() {
-  var sidebar = document.getElementById("mobileSidebar");
-  if (sidebar.style.width === "250px") {
-    sidebar.style.width = "0";
-  } else {
-    sidebar.style.width = "250px";
-  }
+  const sidebar = document.getElementById("mobileSidebar");
+  sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
 }
 
-// dropdown
-// Optional JavaScript if you want to toggle the dropdown manually (without hover)
-document.querySelector('.dropdown button').addEventListener('click', function () {
-    const dropdownContent = document.querySelector('.dropdown-content');
-    const arrow = document.querySelector('.arrow');
+document.addEventListener("click", function (event) {
+  const sidebar = document.getElementById("mobileSidebar");
+  const hamburger = document.querySelector(".hamburger");
 
-    // Toggle dropdown visibility
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-
-    // Rotate arrow when dropdown is opened
-    arrow.style.transform = dropdownContent.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+  if (sidebar.style.width === "250px" &&
+    !sidebar.contains(event.target) &&
+    !hamburger.contains(event.target)) {
+    sidebar.style.width = "0";
+  }
 });
 
 
 // section 7
 document.addEventListener('DOMContentLoaded', function () {
-    const facultyCards = document.querySelectorAll('.faculty-card');
+  const facultyCards = document.querySelectorAll('.faculty-card');
 
-    // Create an Intersection Observer to detect when the cards come into view
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const index = Array.from(facultyCards).indexOf(entry.target);
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(facultyCards).indexOf(entry.target);
 
-                // Add classes based on which set of cards it is
-                if (index < 3) {
-                    entry.target.classList.add('slide-left-to-right');
-                } else {
-                    entry.target.classList.add('slide-right-to-left');
-                }
+        if (index < 3) {
+          entry.target.classList.add('slide-left-to-right');
+        } else {
+          entry.target.classList.add('slide-right-to-left');
+        }
 
-                // Stop observing the card once it's animated
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.7 // Trigger when 50% of the element is in view
+        observer.unobserve(entry.target);
+      }
     });
+  }, {
+    threshold: 0.7
+  });
 
-    // Observe each faculty card
-    facultyCards.forEach(card => {
-        observer.observe(card);
-    });
+  facultyCards.forEach(card => {
+    observer.observe(card);
+  });
 });
 
-
 // section 9
-   // Toggle the answer visibility on click
-   const questions = document.querySelectorAll('.question h3');
-   questions.forEach(question => {
-       question.addEventListener('click', () => {
-           const answer = question.nextElementSibling;
-           answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-       });
-   });
+const questions = document.querySelectorAll('.question h5');
+questions.forEach(question => {
+  question.addEventListener('click', () => {
+    const answer = question.nextElementSibling;
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+  });
+});
 
-   // Toggle the additional questions section visibility
-   const moreQuestionsBtn = document.getElementById('moreQuestionsBtn');
-   const additionalQuestions = document.getElementById('additionalQuestions');
+const moreQuestionsBtn = document.getElementById('moreQuestionsBtn');
+const additionalQuestions = document.getElementById('additionalQuestions');
 
-   moreQuestionsBtn.addEventListener('click', () => {
-       if (additionalQuestions.style.display === 'none' || additionalQuestions.style.display === '') {
-           additionalQuestions.style.display = 'block';
-           moreQuestionsBtn.innerText = 'Show Fewer Questions';
-       } else {
-           additionalQuestions.style.display = 'none';
-           moreQuestionsBtn.innerText = 'More Questions';
-       }
-   });
+moreQuestionsBtn.addEventListener('click', () => {
+  if (additionalQuestions.style.display === 'none' || additionalQuestions.style.display === '') {
+    additionalQuestions.style.display = 'block';
+    moreQuestionsBtn.innerText = 'Show Fewer Questions';
+  } else {
+    additionalQuestions.style.display = 'none';
+    moreQuestionsBtn.innerText = 'More Questions';
+  }
+});
 
+// chat box 
+document.addEventListener("DOMContentLoaded", function () {
+  const chatbotBtn = document.getElementById("chatbot-btn");
+  const chatContainer = document.getElementById("chat-container");
+  const closeChat = document.getElementById("close-chat");
+  const sendBtn = document.getElementById("send-btn");
+  const userInput = document.getElementById("user-input");
+  const chatBox = document.getElementById("chat-box");
 
-   // chat box 
-   document.addEventListener("DOMContentLoaded", function () {
-    const chatbotBtn = document.getElementById("chatbot-btn");
-    const chatContainer = document.getElementById("chat-container");
-    const closeChat = document.getElementById("close-chat");
-    const sendBtn = document.getElementById("send-btn");
-    const userInput = document.getElementById("user-input");
-    const chatBox = document.getElementById("chat-box");
-  
-    // Display the welcome message first when the page reloads
-    window.onload = function () {
-      displayWelcomeMessage();
-    };
-  
-    // Open/Close Chat Window
-    chatbotBtn.addEventListener("click", function () {
-      chatContainer.style.display = "flex";
-      // If the chat is opened manually, display the welcome message and help message
-      displayWelcomeMessage();
-    });
-  
-    closeChat.addEventListener("click", function () {
-      chatContainer.style.display = "none";
-    });
-  
-    // Send Message
-    sendBtn.addEventListener("click", function () {
-      const userMessage = userInput.value.trim();
-      if (userMessage) {
-        // Add user's message
-        addMessage(userMessage, "user");
-  
-        // Clear input field
-        userInput.value = "";
-  
-        // Simulate bot's response
-        setTimeout(() => {
-          const botMessage = "I'm an AI here to help you!";
-          addMessage(botMessage, "bot");
-        }, 1000);
-      }
-    });
-  
-    // Function to add a message to the chat
-    function addMessage(message, sender) {
-      const messageDiv = document.createElement("div");
-      messageDiv.classList.add("message", sender);
-      messageDiv.textContent = message;
-      chatBox.appendChild(messageDiv);
-      chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the bottom
+  window.onload = function () {
+    displayWelcomeMessage();
+  };
+
+  chatbotBtn.addEventListener("click", function () {
+    chatContainer.style.display = "flex";
+    displayWelcomeMessage();
+  });
+
+  closeChat.addEventListener("click", function () {
+    chatContainer.style.display = "none";
+  });
+
+  sendBtn.addEventListener("click", function () {
+    const userMessage = userInput.value.trim();
+    if (userMessage) {
+      addMessage(userMessage, "user");
+
+      userInput.value = "";
+
+      setTimeout(() => {
+        const botMessage = "I'm an AI here to help you!";
+        addMessage(botMessage, "bot");
+      }, 1000);
     }
-  
-    // Function to display the "Welcome to Course Hub!" message
-    function displayWelcomeMessage() {
-      if (chatContainer.style.display === "flex" || chatContainer.style.display === "none") {
-        // First, show the "Welcome to Course Hub!" message
-        const welcomeMessage = "Welcome to Course Hub!";
-        addMessage(welcomeMessage, "bot");
-  
-        // After a short delay (2 seconds), display "How may I help you?"
-        setTimeout(function () {
-          const helpMessage = "How may I help you?";
-          addMessage(helpMessage, "bot");
-        }, 2000);  // Delay of 2 seconds
-      }
+  });
+
+  function addMessage(message, sender) {
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", sender);
+    messageDiv.textContent = message;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function displayWelcomeMessage() {
+    if (chatContainer.style.display === "flex" || chatContainer.style.display === "none") {
+      const welcomeMessage = "Welcome to Course Hub!";
+      addMessage(welcomeMessage, "bot");
+
+      setTimeout(function () {
+        const helpMessage = "How may I help you?";
+        addMessage(helpMessage, "bot");
+      }, 2000);
     }
-  
-    // Optional: Press Enter to send message
-    userInput.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        sendBtn.click();
-      }
+  }
+
+  userInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      sendBtn.click();
+    }
+  });
+});
+
+// section 1 // section 2 
+const leftButtons = document.querySelectorAll('.left-1, .left-2');
+const rightButtons = document.querySelectorAll('.right-1, .right-2');
+const scrollContainers = document.querySelectorAll('.degree-certificate, .degree-certificate-1');
+
+leftButtons.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    scrollContainers[index].scrollBy({
+      left: -320,
+      behavior: 'smooth'
     });
   });
+});
+
+rightButtons.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    scrollContainers[index].scrollBy({
+      left: 320,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// section 4 // section 5 // section 6
+const slider = document.getElementById('courseSlider');
+const leftBtn = document.querySelector('.slider-btn.left');
+const rightBtn = document.querySelector('.slider-btn.right');
+
+leftBtn.addEventListener('click', () => {
+  slider.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+rightBtn.addEventListener('click', () => {
+  slider.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
+// section 8
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".article-container");
+  const leftBtn = document.querySelector(".left-btn");
+  const rightBtn = document.querySelector(".right-btn");
+
+  const scrollAmount = 320; 
+
+  leftBtn.addEventListener("click", () => {
+    container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  rightBtn.addEventListener("click", () => {
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+});

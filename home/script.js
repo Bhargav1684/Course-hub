@@ -1,15 +1,10 @@
 
 // navbar sidebar
 function toggleSidebar() {
-  var sidebar = document.getElementById("mobileSidebar");
-  if (sidebar.style.width === "250px") {
-    sidebar.style.width = "0";
-  } else {
-    sidebar.style.width = "250px";
-  }
+  const sidebar = document.getElementById("mobileSidebar");
+  sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
 }
 
-// Close sidebar when clicking outside navbar 
 document.addEventListener("click", function (event) {
   const sidebar = document.getElementById("mobileSidebar");
   const hamburger = document.querySelector(".hamburger");
@@ -24,9 +19,9 @@ document.addEventListener("click", function (event) {
 // Optional: Show or hide the button based on scroll position
 window.addEventListener("scroll", function () {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    scrollToTopBtn.style.display = "block"; // Show the button
+    scrollToTopBtn.style.display = "block";
   } else {
-    scrollToTopBtn.style.display = "none"; // Hide the button
+    scrollToTopBtn.style.display = "none";
   }
 });
 
@@ -93,33 +88,87 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// small screen size device slider section for all section 
+document.addEventListener('DOMContentLoaded', () => {
+  const sliders = [
+    {
+      container: '.course-section',
+      leftBtn: '.slider-2-btn.left-2',
+      rightBtn: '.slider-2-btn.right-2',
+      responsive: false,
+      dynamicStep: true
+    },
+    {
+      container: '.course-certificates',
+      leftBtn: '.slider-btn.left',
+      rightBtn: '.slider-btn.right',
+      responsive: true
+    },
+    {
+      container: '.course-container2',
+      leftBtn: '.for-left',
+      rightBtn: '.for-right'
+    },
+    {
+      container: '.free-course-certificates',
+      leftBtn: '.free-left',
+      rightBtn: '.free-right'
+    },
+    {
+      container: '.free-course-certificates-4',
+      leftBtn: '.course-left',
+      rightBtn: '.course-right'
+    },
+    {
+      container: '.review-container',
+      leftBtn: '#prevBtn',
+      rightBtn: '#nextBtn',
+      dynamicStep: true
+    },
+    {
+      container: '.community-container',
+      leftBtn: '#prevBtn-1',
+      rightBtn: '#nextBtn-1',
+      dynamicStep: true
+    }
+  ];
 
-// review section 
-const container = document.querySelector('.review-container');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
+  const isSmallScreen = () => window.innerWidth <= 768;
 
-nextBtn.addEventListener('click', () => {
-  container.scrollBy({ left: container.offsetWidth, behavior: 'smooth' });
+  sliders.forEach(slider => {
+    const container = document.querySelector(slider.container);
+    const leftBtn = document.querySelector(slider.leftBtn);
+    const rightBtn = document.querySelector(slider.rightBtn);
+
+    if (!container || !leftBtn || !rightBtn) return;
+
+    const getScrollAmount = () =>
+      slider.dynamicStep ? container.offsetWidth : 300;
+
+    const scrollSlider = (direction) => {
+      container.scrollBy({
+        left: direction === 'left' ? -getScrollAmount() : getScrollAmount(),
+        behavior: 'smooth'
+      });
+    };
+
+    const updateResponsiveButtons = () => {
+      if (slider.responsive) {
+        const display = isSmallScreen() ? 'block' : 'none';
+        leftBtn.style.display = display;
+        rightBtn.style.display = display;
+      }
+    };
+
+    if (!slider.responsive || isSmallScreen()) {
+      leftBtn.addEventListener('click', () => scrollSlider('left'));
+      rightBtn.addEventListener('click', () => scrollSlider('right'));
+    }
+
+    if (slider.responsive) {
+      window.addEventListener('resize', updateResponsiveButtons);
+      updateResponsiveButtons();
+    }
+  });
 });
-
-prevBtn.addEventListener('click', () => {
-  container.scrollBy({ left: -container.offsetWidth, behavior: 'smooth' });
-});
-
-
-// courses community section
-const container1 = document.querySelector('.community-container');
-const nextBtn1 = document.getElementById('nextBtn-1');
-const prevBtn1 = document.getElementById('prevBtn-1');
-
-nextBtn1.addEventListener('click', () => {
-  container1.scrollBy({ left: container1.offsetWidth, behavior: 'smooth' });
-});
-
-prevBtn1.addEventListener('click', () => {
-  container1.scrollBy({ left: -container1.offsetWidth, behavior: 'smooth' });
-});
-
-
 
